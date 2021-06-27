@@ -1,11 +1,16 @@
 #! /bin/sh
 
+#this downloads any available updates to make sure we have the most current version
 sudo apt update
 
+#installs python, apache, and flask
 sudo apt install python3
 sudo apt install apache2
+#this answers a prompt from installing apache
 Y
 sudo pip install flask
 
+#installs a fork of MySQL, called maria data base
 sudo apt install mariadb-server
+#answers a prompt from installing mariadb
 Y
