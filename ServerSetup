@@ -1,0 +1,10 @@
+// use mysql -u root < path-to\ServerSetup.sql to run
+
+create database dividendchampions;
+
+create user 'readonly'@'localhost';
+create user 'readwrite'@'localhost';
+create user 'program'@'localhost';
+
+grant Update,Insert,Select,Delete on dividendchampions.* to 'readwrite'@'localhost';
+grant Update,Insert,Select,Grant Option,Create on dividendchampions.* to 'program'@'localhost';
