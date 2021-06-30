@@ -1,10 +1,27 @@
-// use mysql -u root < path-to\ServerSetup.sql to run
+-- use mysql -u root < path-to\ServerSetup.sql to run
 
 create database dividendchampions;
 
+--creates users
 create user 'readonly'@'localhost';
 create user 'readwrite'@'localhost';
 create user 'program'@'localhost';
 
+--grants the new users their permissions
 grant Update,Insert,Select,Delete on dividendchampions.* to 'readwrite'@'localhost';
 grant Update,Insert,Select,Grant Option,Create on dividendchampions.* to 'program'@'localhost';
+
+--logs into dividendchampions and creates two tables
+use dividendchampions;
+create table stockdates(date date, yearsonlist int);
+create table stockinfo(stockname varchar(30), stickersymbol varchar(30), sector varchar(30), industry varchar(30));
+
+--this section only displays for the admin
+show databases;
+select user from mysql.user;
+show grants for readonly@localhost;
+show grants for readwrite@localhost;
+show grants for program@localhost;
+show tables;
+describe stockdates;
+describe stockinfo;
