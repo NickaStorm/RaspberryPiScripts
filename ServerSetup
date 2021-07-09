@@ -14,7 +14,7 @@ grant Update,Insert,Select,Grant Option,Create on dividendchampions.* to 'progra
 
 --logs into dividendchampions and creates two tables
 use dividendchampions;
-create table stockdates(date date, yearsonlist int);
+create table stockdates(dateofinfo date, yearsonlist int(100));
 create table stockinfo(stockname varchar(30), stickersymbol varchar(30), sector varchar(30), industry varchar(30));
 
 --this section only displays for the admin
