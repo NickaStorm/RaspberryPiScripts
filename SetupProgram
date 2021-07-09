@@ -8,11 +8,10 @@ sudo apt install python3
 sudo apt install apache2 -y
 sudo pip install flask
 sudo pip install pandas
-#sudo pip install sqlite3
 
-#installs a fork of MySQL, called maria data base
+#installs a fork of MySQL, called maria data base and a python accessible api
 sudo apt install mariadb-server -y
+sudo apt install sqlite -y
 
 #need to find out how to automate inputting passwords
 #sudo mysql_secure_installation
-
