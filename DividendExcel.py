@@ -1,17 +1,10 @@
-# from openpyxl import load_workbook
-#
-# data_file = r'c:\users\nicka\pycharmprojects\raspberrypiscripts\usdividendchampions.xlsx'
-#
-# # Load the entire workbook.
-# wb = load_workbook(data_file)
-#
-# # List all the sheets in the file.
-# print("Found the following worksheets:")
-# for sheetname in wb.sheetnames:
-#     print(sheetname)
-
-
-
 import pandas as pd
-data_xls = pd.read_excel(r'c:\users\nicka\pycharmprojects\raspberrypiscripts\usdividendchampions.xlsx', 'Champions', engine='openpyxl')
+data_xls = pd.read_excel(r'c:\users\nicka\pycharmprojects\raspberrypiscripts\usdividendchampions.xlsx', sheet_name='Champions', engine='openpyxl', skiprows=2, index_col=0, usecols='A,B,D,E,AN')
+#A = Symbol, B = Company, D = Sector, E = No Years, AN = Industry
 data_xls.to_csv('csvfile.csv', encoding='utf-8')
+
+data = pd.read_csv('csvfile.csv')
+
+for row in data.iloc:
+    print(row)
+# print(data.iloc[0])
