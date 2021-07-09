@@ -13,5 +13,8 @@ sudo pip install pandas
 sudo apt install mariadb-server -y
 sudo apt install sqlite -y
 
+#installs the excel sheet for the dividend stocks
+wget https://bit.ly/USDividendChampions1
+
 #need to find out how to automate inputting passwords
 #sudo mysql_secure_installation
