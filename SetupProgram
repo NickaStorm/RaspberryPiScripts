@@ -2,12 +2,14 @@
 
 #this downloads any available updates to make sure we have the most current version
 sudo apt update
+sudo apt upgrade -y
 
 #installs python, apache, and flask
 sudo apt install python3
 sudo apt install apache2 -y
 sudo pip install flask
-sudo pip install pandas
+sudo apt-get install python3-pandas -y
+sudo pip install openpyxl
 
 #installs a fork of MySQL, called maria data base and a python accessible api
 sudo apt install mariadb-server -y
