@@ -1,4 +1,3 @@
-import sqlite3
 import mariadb
 import openpyxl
 import csv
@@ -16,21 +15,20 @@ with open('test.csv', 'w', newline='') as file:
     sheet.delete_cols(6, 33)
     sheet.delete_cols(3, 1)
     sheet.delete_cols(5, 1)
-    for col in sheet.iter_cols():
-        for row in sheet.iter_rows():
-            csv.writerow([cell.value for cell in row])
+    for row in sheet.iter_rows():
+        csv.writerow([cell.value for cell in row])
 
 def insertdata(info):
     con = mariadb.connect(
         user="root",
-        password="",
+        password="blueberry",
         host="127.0.0.1",
         port=3306,
         database="dividendchampions"
     )
     cur = con.cursor()
     yearsonlist = info.pop(3)
-    cur.execute("insert into stockinfo (stockname, stickersymbol, sector, industry) values (?, ?, ?, ?)", info)
+    cur.execute("insert into stockinfo (stickersymbol, stockname, sector, industry) values (?, ?, ?, ?)", info)
     cur.execute("insert into stockdates (dateofinfo, yearsonlist) values (?, ?)", ('curdate()', yearsonlist))
     con.commit()
     con.close()

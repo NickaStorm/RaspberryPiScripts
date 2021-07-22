@@ -13,7 +13,7 @@ sudo pip3 install openpyxl==2.6.4
 
 #installs a fork of MySQL, called maria data base and a python accessible api
 sudo apt install mariadb-server -y
-sudo apt install sqlite -y
+sudo apt install mariadb -y
 
 #installs the excel sheet for the dividend stocks
 wget https://bit.ly/USDividendChampions1
