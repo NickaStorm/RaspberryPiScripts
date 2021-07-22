@@ -9,7 +9,7 @@ sudo apt install python3
 sudo apt install apache2 -y
 sudo pip install flask
 sudo apt-get install python3-pandas -y
-sudo pip install openpyxl
+sudo pip install openpyxl==2.6.4
 
 #installs a fork of MySQL, called maria data base and a python accessible api
 sudo apt install mariadb-server -y

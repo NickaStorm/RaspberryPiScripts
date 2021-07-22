@@ -2,36 +2,29 @@ import sqlite3
 import openpyxl
 import csv
 
-#use /home/pi/USDividendChampions1.xlsx on the raspberry pi
-
+#workbook = openpyxl.load_workbook(r'/home/pi/USDividendChampions1.xlsx')
 workbook = openpyxl.load_workbook(r'c:\users\nicka\pycharmprojects\raspberrypiscripts\usdividendchampions.xlsx')
 if "Champions" in workbook.sheetnames:
     sheet = workbook["Champions"]
 else:
     print("Error, unable to find champions sheet name = Champions")
 
-with open('test.csv', 'w', newline="") as file:
-    csv = csv.writer(file)
-    sheet.delete_rows(1, 2)
+with open('test.csv', 'w', newline='') as file:
+    csv = csv.writer(file, delimiter = '%')
+    sheet.delete_rows(1, 3)
     sheet.delete_cols(6, 33)
     sheet.delete_cols(3, 1)
     sheet.delete_cols(5, 1)
     for col in sheet.iter_cols():
         for row in sheet.iter_rows():
-            # for cell in row:
-                # print(cell.value)
             csv.writerow([cell.value for cell in row])
 
 def insertdata(info):
     con = sqlite3.connect('dividendchampions.db')
     cur = con.cursor()
-    indexnumber = 0
-    for row in info:
-        # stockinfo = info[indexnumber].tolist()
-        yearsonlist = stockinfo.pop(3)
-        cur.execute("insert into stockinfo (stockname, stickersymbol, sector, industry) values (?, ?, ?, ?)", stockinfo)
-        cur.execute("insert into stockdates (dateofinfo, yearsonlist) values (?, ?)", ('curdate()', yearsonlist))
-        indexnumber += 1
+    yearsonlist = info.pop(3)
+    cur.execute("insert into stockinfo (stockname, stickersymbol, sector, industry) values (?, ?, ?, ?)", info)
+    cur.execute("insert into stockdates (dateofinfo, yearsonlist) values (?, ?)", ('curdate()', yearsonlist))
     con.commit()
     con.close()
 
@@ -43,10 +36,7 @@ def insertdata(info):
 
 with open('test.csv', 'r') as file:
     for line in file:
-        list = line.split(',')
-        print(list)
+        list = line.split('%')
+        list[4] = list[4].strip('\n')
         insertdata(list)
-
-
-
-
+        #print(list)
