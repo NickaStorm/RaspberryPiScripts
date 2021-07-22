@@ -1,4 +1,5 @@
 import sqlite3
+import mariadb
 import openpyxl
 import csv
 
@@ -20,7 +21,13 @@ with open('test.csv', 'w', newline='') as file:
             csv.writerow([cell.value for cell in row])
 
 def insertdata(info):
-    con = sqlite3.connect('dividendchampions.db')
+    con = mariadb.connect(
+        user="root",
+        password="",
+        host="127.0.0.1",
+        port=3306,
+        database="dividendchampions"
+    )
     cur = con.cursor()
     yearsonlist = info.pop(3)
     cur.execute("insert into stockinfo (stockname, stickersymbol, sector, industry) values (?, ?, ?, ?)", info)
