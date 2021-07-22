@@ -5,8 +5,8 @@ import time
 
 #python3 DividendExcel.py to run in Desktop directory
 
-#workbook = openpyxl.load_workbook(r'/home/pi/USDividendChampions1.xlsx')
-workbook = openpyxl.load_workbook(r'c:\users\nicka\pycharmprojects\raspberrypiscripts\usdividendchampions.xlsx')
+workbook = openpyxl.load_workbook(r'/home/pi/Desktop/USDividendChampions1.xlsx')
+#workbook = openpyxl.load_workbook(r'c:\users\nicka\pycharmprojects\raspberrypiscripts\usdividendchampions.xlsx')
 
 if "Champions" in workbook.sheetnames:
     sheet = workbook["Champions"]
