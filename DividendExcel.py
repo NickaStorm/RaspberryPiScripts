@@ -12,7 +12,7 @@ else:
 
 def convertXlToCsv():
     with open('test.csv', 'w', newline='') as file:
-        csv = csv.writer(file, delimiter = '%')
+        tempcsv = csv.writer(file, delimiter = '%')
         #deletes the head rows that display names
         sheet.delete_rows(1, 3)
         #deletes everything that isn't necessary
@@ -20,7 +20,7 @@ def convertXlToCsv():
         sheet.delete_cols(3, 1)
         sheet.delete_cols(5, 1)
         for row in sheet.iter_rows():
-            csv.writerow([cell.value for cell in row])
+            tempcsv.writerow([cell.value for cell in row])
 
 def insertData(info):
     con = mariadb.connect(
@@ -42,7 +42,7 @@ def convertCsvPrep():
         for line in file:
             list = line.split('%')
             list[4] = list[4].strip('\n')
-            insertdata(list)
+            insertData(list)
 
 convertXlToCsv()
 convertCsvPrep()
