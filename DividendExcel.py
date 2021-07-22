@@ -2,6 +2,8 @@ import mariadb
 import openpyxl
 import csv
 
+#python3 DividendExcel to run in Desktop directory
+
 #workbook = openpyxl.load_workbook(r'/home/pi/USDividendChampions1.xlsx')
 workbook = openpyxl.load_workbook(r'c:\users\nicka\pycharmprojects\raspberrypiscripts\usdividendchampions.xlsx')
 

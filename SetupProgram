@@ -1,5 +1,7 @@
 #!/bin/sh
 
+#sh SetupProgram to run in Desktop directory
+
 #this downloads any available updates to make sure we have the most current version
 sudo apt update
 sudo apt upgrade -y

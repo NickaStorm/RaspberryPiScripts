@@ -1,4 +1,5 @@
 --need to save as sql file, to the desktop
+
 --mysql -u root < /home/pi/Desktop/ServerSetup.sql to run
 
 create database dividendchampions;
