@@ -4,9 +4,9 @@
 create database dividendchampions;
 
 --creates users
-create user 'readonly'@'localhost';
-create user 'readwrite'@'localhost';
-create user 'program'@'localhost';
+--create user 'readonly'@'localhost';
+--create user 'readwrite'@'localhost';
+--create user 'program'@'localhost';
 
 --grants the new users their permissions
 grant Update,Insert,Select,Delete on dividendchampions.* to 'readwrite'@'localhost';
@@ -20,9 +20,9 @@ create table stockinfo(stickersymbol varchar(30), stockname varchar(60), sector 
 --this section only displays for the admin
 show databases;
 select user from mysql.user;
-show grants for readonly@localhost;
-show grants for readwrite@localhost;
-show grants for program@localhost;
+--show grants for readonly@localhost;
+--show grants for readwrite@localhost;
+--show grants for program@localhost;
 show tables;
 describe stockdates;
 describe stockinfo;
