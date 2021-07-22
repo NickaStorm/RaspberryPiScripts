@@ -9,9 +9,11 @@ sudo apt upgrade -y
 #installs python, apache, and flask
 sudo apt install python3
 sudo apt install apache2 -y
+sudo apt install time
 sudo pip3 install flask
 sudo apt-get install python3-pandas -y
 sudo pip3 install openpyxl==2.6.4
+sudo pip3 install mariadb
 
 #installs a fork of MySQL, called maria data base and a python accessible api
 sudo apt install mariadb-server -y
@@ -19,6 +21,8 @@ sudo apt install mariadb -y
 
 #installs the excel sheet for the dividend stocks
 wget https://bit.ly/USDividendChampions1
+mv USDividendChampions1 USDividendChampions1.xlsx
+mv ServerSetup ServerSetup.sql
 
 #need to find out how to automate inputting passwords
 #sudo mysql_secure_installation

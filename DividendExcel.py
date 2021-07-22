@@ -1,8 +1,9 @@
 import mariadb
 import openpyxl
 import csv
+import time
 
-#python3 DividendExcel to run in Desktop directory
+#python3 DividendExcel.py to run in Desktop directory
 
 #workbook = openpyxl.load_workbook(r'/home/pi/USDividendChampions1.xlsx')
 workbook = openpyxl.load_workbook(r'c:\users\nicka\pycharmprojects\raspberrypiscripts\usdividendchampions.xlsx')
@@ -35,7 +36,8 @@ def insertData(info):
     cur = con.cursor()
     yearsonlist = info.pop(3)
     cur.execute("insert into stockinfo (stickersymbol, stockname, sector, industry) values (?, ?, ?, ?)", info)
-    cur.execute("insert into stockdates (dateofinfo, yearsonlist) values (?, ?)", ('curdate()', yearsonlist))
+    temptime = time.strftime('%Y-%m-%d')
+    cur.execute("insert into stockdates (dateofinfo, yearsonlist) values (?, ?)", (temptime, yearsonlist))
     con.commit()
     con.close()
 
