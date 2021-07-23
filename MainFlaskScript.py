@@ -1,5 +1,6 @@
 from flask import Flask
 
+#creates a web app at http://127.0.0.1:5000 then add any sub pages
 app = Flask(__name__)
 
 #creates the base home page
