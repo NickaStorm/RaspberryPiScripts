@@ -19,10 +19,17 @@ sudo pip3 install mariadb
 sudo apt install mariadb-server -y
 sudo apt install mariadb -y
 
+#makes the preparations for and deploys app.py
+mkdir webapp
+cd webapp
+mkdir templates
+cd ..
+mv /home/pi/Desktop/app.py /home/pi/webapp/
+mv /home/pi/Desktop/index.html /home/jack/webapp/templates/
+python3 app.py
+
 #installs the excel sheet for the dividend stocks
 wget https://bit.ly/USDividendChampions1
 mv USDividendChampions1 USDividendChampions1.xlsx
 mv ServerSetup ServerSetup.sql
 
-#need to find out how to automate inputting passwords
-#sudo mysql_secure_installation
