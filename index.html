@@ -25,9 +25,11 @@ th, td {
       <th>{{ heading }}</th>
       {% endfor %}
   </tr>
-    {% for row in data %}
+    {% for list in data %}
   <tr>
-      <td>{{ row }}</td>
+      {% for item in list %}
+      <td>{{ item }}</td>
+      {% endfor %}
   </tr>
     {% endfor %}
 </table>
