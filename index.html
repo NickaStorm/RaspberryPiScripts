@@ -21,10 +21,9 @@ th, td {
 
 <table style="width:100%">
   <tr>
-      <th>Sticker</th>
-      <th>Name</th>
-      <th>Sector</th>
-      <th>Industry</th>
+      {% for header in headings %}
+      <th> {{ heading }}</th>
+      {% endfor %}
   </tr>
   <tr>
       <td>ABM</td>
