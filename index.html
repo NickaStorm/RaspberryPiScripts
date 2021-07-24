@@ -19,20 +19,40 @@ th, td {
 <body>
 <h2>Project Prometheus Dividend Champions Stock Info</h2>
 
-<table style="width:100%">
-  <tr>
-      <th>Sticker</th>
-      <th>Name</th>
-      <th>Sector</th>
-      <th>Industry</th>
-  </tr>
-  <tr>
-      <td>ABM</td>
-      <td>ABM Industries Incorporated</td>
-      <td>Industrials</td>
-      <td>Commercial Services and Supplies</td>
-  </tr>
-</table>
+<!--<table style="width:100%">-->
+<!--  <tr>-->
+<!--      <th>Sticker</th>-->
+<!--      <th>Name</th>-->
+<!--      <th>Sector</th>-->
+<!--      <th>Industry</th>-->
+<!--  </tr>-->
+<!--  <tr>-->
+<!--      <td>ABM</td>-->
+<!--      <td>ABM Industries Incorporated</td>-->
+<!--      <td>Industrials</td>-->
+<!--      <td>Commercial Services and Supplies</td>-->
+<!--  </tr>-->
+<!--</table>-->
+
+<input type="file" name="test.csv"
+            id="test.csv">
+    <br>
+
+    <pre id="output"></pre>
+
+    <script type="text/javascript">
+        document.getElementById('test.csv')
+            .addEventListener('change', function() {
+
+            var fr=new FileReader();
+            fr.onload=function(){
+                document.getElementById('output')
+                        .textContent=fr.result;
+            }
+
+            fr.readAsText(this.files[0]);
+        })
+    </script>
 
 </body>
 </html>
