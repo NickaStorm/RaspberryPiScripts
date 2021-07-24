@@ -15,7 +15,7 @@ config = {
     'password': 'blueberry',
     'database': 'dividendchampions'
 }
-headings = ('Sticker', 'Name', 'Sector', 'Industry')
+headers = ('Sticker', 'Name', 'Sector', 'Industry')
 jsonData = []
 
 #creates the base home page
@@ -27,7 +27,6 @@ def index():
     cur.execute("select * from stockinfo")
 
     # serialize results into JSON
-    row_headers = [x[0] for x in cur.description]
     rv = cur.fetchall()
     for result in rv:
         jsonData.append(result)
@@ -45,12 +44,11 @@ def tables():
     cur.execute("select * from stockinfo")
 
     # serialize results into JSON
-    row_headers = [x[0] for x in cur.description]
     rv = cur.fetchall()
     for result in rv:
         jsonData.append(result)
 
-    return render_template('index.html', headings=row_headers, data=jsonData)
+    return render_template('index.html', headings=headers, data=jsonData)
 
 
 
