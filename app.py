@@ -21,33 +21,25 @@ jsonData = []
 #creates the base home page
 @app.route('/')
 def index():
-    # connection for MariaDB
     conn = mariadb.connect(**config)
-    # create a connection cursor
     cur = conn.cursor()
-    # execute a SQL statement
-    cur.execute("select * from stockinfo where stickersymbol like 'a%'")
+
+    cur.execute("select * from stockinfo")
 
     # serialize results into JSON
     row_headers = [x[0] for x in cur.description]
     rv = cur.fetchall()
     for result in rv:
-        jsonData.append(dict(zip(row_headers, result)))
+        jsonData.append(result)
 
-    lst = jsonData.values()
-    lst2 = list(lst)
+    return json.dumps(jsonData)
 
-    # return the results!
-    return json.dumps(lst2)
-
-valuesOfJson = jsonData.values()
-valuesList = list(valuesOfJson)
 
 #the index file has to be in a dir named templates in webapp
 #creates the table sub page
 @app.route('/tables')
 def tables():
-    return render_template('index.html', headings=headings, data=valuesList)
+    return render_template('index.html', headings=headings, data=json.dumps(jsonData))
 
 
 

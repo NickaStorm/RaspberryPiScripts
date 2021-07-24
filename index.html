@@ -25,12 +25,13 @@ th, td {
       <th> {{ heading }}</th>
       {% endfor %}
   </tr>
+    {% for row in data %}
   <tr>
-      <td>ABM</td>
-      <td>ABM Industries Incorporated</td>
-      <td>Industrials</td>
-      <td>Commercial Services and Supplies</td>
+      {% for cell in row %}
+      <td>{{ cell }}</td>
+      {% endfor %}
   </tr>
+    {% endfor %}
 </table>
 
 </body>
