@@ -22,14 +22,12 @@ th, td {
 <table style="width:100%">
   <tr>
       {% for header in headings %}
-      <th> {{ heading }}</th>
+      <th>{{ heading }}</th>
       {% endfor %}
   </tr>
     {% for row in data %}
   <tr>
-      {% for cell in row %}
-      <td>{{ cell }}</td>
-      {% endfor %}
+      <td>{{ row }}</td>
   </tr>
     {% endfor %}
 </table>
