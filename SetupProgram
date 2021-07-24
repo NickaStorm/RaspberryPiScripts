@@ -20,13 +20,15 @@ sudo apt install mariadb-server -y
 sudo apt install mariadb -y
 
 #makes the preparations for and deploys app.py
+cd /home/pi
 mkdir webapp
 cd webapp
 mkdir templates
-cd ..
+cd /home/pi/webapp
 mv /home/pi/Desktop/app.py /home/pi/webapp/
-mv /home/pi/Desktop/index.html /home/jack/webapp/templates/
+mv /home/pi/Desktop/index.html /home/pi/webapp/templates/
 python3 app.py
+cd /home/pi/Desktop
 
 #installs the excel sheet for the dividend stocks
 wget https://bit.ly/USDividendChampions1
