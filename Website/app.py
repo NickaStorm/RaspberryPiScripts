@@ -71,11 +71,7 @@ def stockgraph():
     axis = fig.add_subplot(1, 1, 1)
     x1 = [1, 2, 3, 4]
     y1 = [2, 6, 1, 3]
-    axis.plot(x1, y1, label='line name')
-    axis[0].set_title('subplot 1')
-    axis[0].set_xlabel('distance (m)')
-    axis[0].set_ylabel('Damped oscillation')
-    fig.suptitle('This is a somewhat long figure title', fontsize=16)
+    axis.plot(x1, y1)
     output = BytesIO()
     FigureCanvas(fig).print_png(output)
     return Response(output.getvalue(), mimetype='image/png')
