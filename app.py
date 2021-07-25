@@ -4,6 +4,12 @@ import mariadb
 import matplotlib.pyplot as plt
 from io import BytesIO
 import base64
+from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+from matplotlib.figure import Figure
+from flask import Flask
+import numpy as np
+plt.rcParams["figure.figsize"] = [7.50, 3.50]
+plt.rcParams["figure.autolayout"] = True
 
 #this script needs to be in home/pi/webapp along with the templates dir
 
@@ -67,10 +73,10 @@ def stockgraph():
     x = [0, 2, 1, 3, 4]
 
     plt.plot(x, y, label='line name')
-    plt.xlabel('x axis name')
-    plt.ylabel('x axis name')
-    plt.title('test graph')
-    plt.legend()
+    # plt.xlabel('x axis name')
+    # plt.ylabel('y axis name')
+    # plt.title('test graph')
+    # plt.legend()
     plt.savefig(img, format='jpg')
     plt.close()
     img.seek(0)
@@ -79,6 +85,16 @@ def stockgraph():
 
     return render_template('stockgraph.html', graph=plot)
 
+@app.route('/print-plot')
+def plot_png():
+   fig = Figure()
+   axis = fig.add_subplot(1, 1, 1)
+   xs = np.random.rand(100)
+   ys = np.random.rand(100)
+   axis.plot(xs, ys)
+   output = io.BytesIO()
+   FigureCanvas(fig).print_png(output)
+   return Response(output.getvalue(), mimetype='image/png')
 
 
 
