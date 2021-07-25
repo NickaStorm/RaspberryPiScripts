@@ -6,6 +6,7 @@ from io import BytesIO
 import base64
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
+from flask import Response
 from flask import Flask
 import numpy as np
 plt.rcParams["figure.figsize"] = [7.50, 3.50]
@@ -72,16 +73,23 @@ def stockgraph():
     y = [1, 2, 3, 4, 5]
     x = [0, 2, 1, 3, 4]
 
-    plt.plot(x, y, label='line name')
+    fig = Figure()
+    axis = fig.add_subplot(1, 1, 1)
+    axis.plot(x, y)
+
+    output = BytesIO()
+    FigureCanvas(fig).print_png(output)
+
+    # plt.plot(x, y, label='line name')
     # plt.xlabel('x axis name')
     # plt.ylabel('y axis name')
     # plt.title('test graph')
     # plt.legend()
-    plt.savefig(img, format='jpg')
-    plt.close()
-    img.seek(0)
+    # plt.savefig(img, format='jpg')
+    # plt.close()
+    # img.seek(0)
 
-    plot = base64.b64encode(img.getvalue())
+    plot = output.getvalue()
 
     return render_template('stockgraph.html', graph=plot)
 
@@ -92,7 +100,7 @@ def plot_png():
    xs = np.random.rand(100)
    ys = np.random.rand(100)
    axis.plot(xs, ys)
-   output = io.BytesIO()
+   output = BytesIO()
    FigureCanvas(fig).print_png(output)
    return Response(output.getvalue(), mimetype='image/png')
 
