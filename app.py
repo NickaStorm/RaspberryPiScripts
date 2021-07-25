@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 import json
 import mariadb
+import matplotlib.pyplot as plt
 
 #this script needs to be in home/pi/webapp along with the templates dir
 
@@ -50,7 +51,27 @@ def tables():
 
     return render_template('index.html', headings=headers, data=jsonData)
 
+@app.route('/stockgraph')
+def stockgraph():
+    conn = mariadb.connect(**config)
+    cur = conn.cursor()
 
+    x1 = [1,2,3]
+    y1 = [2,4,1]
+    plt.plot(x1, y1, label = "line name")
+    plt.xlabel('x axis name')
+    plt.ylabel('x axis name')
+    plt.title('test graph')
+    plt.legend()
+
+    cur.execute("select * from stockinfo")
+
+    # serialize results into JSON
+    rv = cur.fetchall()
+    for result in rv:
+        jsonData.append(result)
+
+    return plt.show()
 
 
 
