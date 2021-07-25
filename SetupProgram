@@ -32,5 +32,6 @@ mkdir templates
 cd /home/pi/webapp
 mv /home/pi/Desktop/app.py /home/pi/webapp/
 mv /home/pi/Desktop/index.html /home/pi/webapp/templates/
+mv /home/pi/Desktop/stockgraph.html /home/pi/webapp/templates/
 python3 app.py
 cd /home/pi/Desktop
