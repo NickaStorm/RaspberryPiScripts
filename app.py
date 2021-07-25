@@ -2,6 +2,8 @@ from flask import Flask, render_template
 import json
 import mariadb
 import matplotlib.pyplot as plt
+from io import StringIO
+import base64
 
 #this script needs to be in home/pi/webapp along with the templates dir
 
@@ -55,23 +57,27 @@ def tables():
 def stockgraph():
     conn = mariadb.connect(**config)
     cur = conn.cursor()
-
-    x1 = [1,2,3]
-    y1 = [2,4,1]
-    plt.plot(x1, y1, label = "line name")
-    plt.xlabel('x axis name')
-    plt.ylabel('x axis name')
-    plt.title('test graph')
-    plt.legend()
-
     cur.execute("select * from stockinfo")
-
-    # serialize results into JSON
     rv = cur.fetchall()
     for result in rv:
         jsonData.append(result)
 
-    return plt.show()
+    img = io.StringIO()
+    y = [1,2,3,4,5]
+    x = [0,2,1,3,4]
+
+    plt.plot(x,y, label='line name')
+    plt.xlabel('x axis name')
+    plt.ylabel('x axis name')
+    plt.title('test graph')
+    plt.legend()
+    plt.savefig(img, format='png')
+    plt.close()
+    img.seek(0)
+
+    plot = base64.b64encode(img.getvalue())
+
+    return render_template('stockgraph.html', graph=plot)
 
 
 
