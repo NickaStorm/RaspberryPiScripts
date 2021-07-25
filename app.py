@@ -62,7 +62,7 @@ def stockgraph():
     for result in rv:
         jsonData.append(result)
 
-    img = io.StringIO()
+    img = StringIO.StringIO()
     y = [1,2,3,4,5]
     x = [0,2,1,3,4]
 
