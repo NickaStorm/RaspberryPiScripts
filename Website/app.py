@@ -1,14 +1,12 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, Response
 import json
 import mariadb
 import matplotlib.pyplot as plt
-from io import BytesIO
-import base64
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
-from flask import Response
-from flask import Flask
+from io import BytesIO
 import numpy as np
+
 plt.rcParams["figure.figsize"] = [7.50, 3.50]
 plt.rcParams["figure.autolayout"] = True
 
@@ -16,7 +14,6 @@ plt.rcParams["figure.autolayout"] = True
 
 #creates a web app at http://127.0.0.1:5000 then add any sub pages
 app = Flask(__name__)
-#app.config["DEBUG"] = True
 
 config = {
     'host': '127.0.0.1',
@@ -60,6 +57,7 @@ def tables():
 
     return render_template('index.html', headings=headers, data=jsonData)
 
+
 @app.route('/stockgraph')
 def stockgraph():
     conn = mariadb.connect(**config)
@@ -69,42 +67,16 @@ def stockgraph():
     for result in rv:
         jsonData.append(result)
 
-    img = BytesIO()
-    y = [1, 2, 3, 4, 5]
-    x = [0, 2, 1, 3, 4]
-
     fig = Figure()
     axis = fig.add_subplot(1, 1, 1)
-    axis.plot(x, y)
-
+    x1 = [1, 4, 3]
+    y1 = [2, 6, 1]
+    axis.plot(x1, y1, label='line name')
+    axis.xlabel('x axis')
+    axis.ylabel('y axis')
     output = BytesIO()
     FigureCanvas(fig).print_png(output)
-
-    # plt.plot(x, y, label='line name')
-    # plt.xlabel('x axis name')
-    # plt.ylabel('y axis name')
-    # plt.title('test graph')
-    # plt.legend()
-    # plt.savefig(img, format='jpg')
-    # plt.close()
-    # img.seek(0)
-
-    plot = output.getvalue()
-
-    return render_template('stockgraph.html', graph=plot)
-
-@app.route('/print-plot')
-def plot_png():
-   fig = Figure()
-   axis = fig.add_subplot(1, 1, 1)
-   xs = np.random.rand(100)
-   ys = np.random.rand(100)
-   axis.plot(xs, ys)
-   output = BytesIO()
-   FigureCanvas(fig).print_png(output)
-   return Response(output.getvalue(), mimetype='image/png')
-
-
+    return Response(output.getvalue(), mimetype='image/png')
 
 
 app.run()
