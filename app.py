@@ -2,7 +2,7 @@ from flask import Flask, render_template
 import json
 import mariadb
 import matplotlib.pyplot as plt
-from io import StringIO
+from io import BytesIO
 import base64
 
 #this script needs to be in home/pi/webapp along with the templates dir
@@ -62,7 +62,7 @@ def stockgraph():
     for result in rv:
         jsonData.append(result)
 
-    img = bytes()
+    img = BytesIO()
     y = [1, 2, 3, 4, 5]
     x = [0, 2, 1, 3, 4]
 
@@ -71,7 +71,7 @@ def stockgraph():
     plt.ylabel('x axis name')
     plt.title('test graph')
     plt.legend()
-    plt.savefig(img, format='png')
+    plt.savefig(img, format='jpg')
     plt.close()
     img.seek(0)
 
