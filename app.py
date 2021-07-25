@@ -62,11 +62,11 @@ def stockgraph():
     for result in rv:
         jsonData.append(result)
 
-    img = StringIO.StringIO()
-    y = [1,2,3,4,5]
-    x = [0,2,1,3,4]
+    img = StringIO()
+    y = [1, 2, 3, 4, 5]
+    x = [0, 2, 1, 3, 4]
 
-    plt.plot(x,y, label='line name')
+    plt.plot(x, y, label='line name')
     plt.xlabel('x axis name')
     plt.ylabel('x axis name')
     plt.title('test graph')
