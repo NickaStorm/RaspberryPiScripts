@@ -25,13 +25,13 @@ mv USDividendChampions1 USDividendChampions1.xlsx
 mv ServerSetup ServerSetup.sql
 
 #makes the preparations for and deploys app.py
-cd /home/pi
+cd /home/ubuntu/RaspberryPiScripts/Website
 mkdir webapp
 cd webapp
 mkdir templates
-cd /home/pi/webapp
-mv /home/pi/Desktop/app.py /home/pi/webapp/
-mv /home/pi/Desktop/index.html /home/pi/webapp/templates/
-mv /home/pi/Desktop/stockgraph.html /home/pi/webapp/templates/
+cd /home/ubuntu/RaspberryPiScripts/Website
+mv /home/ubuntu/RaspberryPiScripts/Website/app.py /home/ubuntu/RaspberryPiScripts/Website/
+mv /home/ubuntu/RaspberryPiScripts/Website/index.html /home/ubuntu/RaspberryPiScripts/Website/templates/
+mv /home/ubuntu/RaspberryPiScripts/Website/stockgraph.html /home/ubuntu/RaspberryPiScripts/Website/templates/
 python3 app.py
-cd /home/pi/Desktop
+cd /home/ubuntu/RaspberryPiScripts
