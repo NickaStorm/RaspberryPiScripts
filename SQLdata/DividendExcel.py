@@ -29,7 +29,7 @@ def insertData(info):
     con = mariadb.connect(
         user="root",
         password="blueberry",
-        host="127.0.0.1",
+        host="172.31.12.92",
         port=3306,
         database="dividendchampions"
     )
