@@ -31,7 +31,7 @@ sudo apt install mariadb -y
 
 #installs the excel sheet for the dividend stocks
 wget https://bit.ly/USDividendChampions1
-mv USDividendChampions1 USDividendChampions1.xlsx
+mv USDividendChampions1 USDividendChampions.xlsx
 mv ServerSetup ServerSetup.sql
 
 #makes the preparations for and deploys app.py
