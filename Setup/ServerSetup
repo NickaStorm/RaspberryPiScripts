@@ -1,6 +1,6 @@
 --need to save as sql file, to the desktop
 
---sudo mysql -u root < /home/pi/Desktop/ServerSetup.sql to run
+--sudo mysql -u root < /home/ubuntu/RaspberryPiScripts/Setup/ServerSetup.sql to run
 
 create database dividendchampions;
 
@@ -19,7 +19,7 @@ create table stockdates(dateofinfo date, yearsonlist int(100));
 create table stockinfo(stickersymbol varchar(30), stockname varchar(60), sector varchar(60), industry varchar(60));
 
 flush privileges;
-alter user 'root'@'localhost' identified by 'blueberry';
+set password for 'root'@'localhost' = password('blueberry');
 
 --this section only displays for the admin
 --show databases;

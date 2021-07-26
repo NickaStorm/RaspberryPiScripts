@@ -5,6 +5,7 @@
 #this downloads any available updates to make sure we have the most current version
 sudo apt update
 sudo apt upgrade -y
+sudo apt install python3-pip
 
 #installs python, apache, and flask
 sudo apt install python3
@@ -13,7 +14,8 @@ sudo apt install time
 sudo pip3 install flask
 sudo apt-get install python3-pandas -y
 sudo pip3 install openpyxl==2.6.4
-sudo pip3 install mariadb
+sudo apt-get install -y libmariadb-dev
+sudo apt-get install python3.6-dev libmysqlclient-dev
 
 #installs a fork of MySQL, called maria data base and a python accessible api
 sudo apt install mariadb-server -y
@@ -30,8 +32,8 @@ mkdir webapp
 cd webapp
 mkdir templates
 cd /home/ubuntu/RaspberryPiScripts/Website
-mv /home/ubuntu/RaspberryPiScripts/Website/app.py /home/ubuntu/RaspberryPiScripts/Website/
-mv /home/ubuntu/RaspberryPiScripts/Website/index.html /home/ubuntu/RaspberryPiScripts/Website/templates/
-mv /home/ubuntu/RaspberryPiScripts/Website/stockgraph.html /home/ubuntu/RaspberryPiScripts/Website/templates/
+mv /home/ubuntu/RaspberryPiScripts/Website/app.py /home/ubuntu/RaspberryPiScripts/Website/webapp
+mv /home/ubuntu/RaspberryPiScripts/Website/index.html /home/ubuntu/RaspberryPiScripts/Website/webapp/templates
+mv /home/ubuntu/RaspberryPiScripts/Website/stockgraph.html /home/ubuntu/RaspberryPiScripts/Website/webapp/templates/
 python3 app.py
 cd /home/ubuntu/RaspberryPiScripts
