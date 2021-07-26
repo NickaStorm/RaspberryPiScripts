@@ -28,6 +28,7 @@ sudo pip3 install mariadb
 #installs a fork of MySQL, called maria data base and a python accessible api
 sudo apt install mariadb-server -y
 sudo apt install mariadb -y
+sudo apt install mysql-client-core-5.7
 
 #installs the excel sheet for the dividend stocks
 wget https://bit.ly/USDividendChampions1
