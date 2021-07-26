@@ -20,6 +20,10 @@ create table stockinfo(stickersymbol varchar(30), stockname varchar(60), sector 
 
 flush privileges;
 set password for 'root'@'localhost' = password('blueberry');
+use mysql
+create user 'user'@'localhost' identified by 'blueberry';
+use dividendchampions;
+grant all privileges on *.* to 'user'@'localhost' identified by 'blueberry';
 
 --this section only displays for the admin
 --show databases;
