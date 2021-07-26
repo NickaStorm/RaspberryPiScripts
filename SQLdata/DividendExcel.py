@@ -27,7 +27,7 @@ def convertXlToCsv():
 
 def insertData(info):
     con = mariadb.connect(
-        user="root",
+        user="user",
         password="blueberry",
         host="127.0.0.1",
         port=3306,
