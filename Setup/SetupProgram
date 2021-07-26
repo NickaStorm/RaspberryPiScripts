@@ -14,8 +14,16 @@ sudo apt install time
 sudo pip3 install flask
 sudo apt-get install python3-pandas -y
 sudo pip3 install openpyxl==2.6.4
-sudo apt-get install -y libmariadb-dev
 sudo apt-get install python3.6-dev libmysqlclient-dev
+sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db
+curl -LsS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash
+sudo apt-get install -y apt-transport-https
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get dist-upgrade
+sudo apt-get install libmariadb3
+sudo apt-get install libmariadb-dev
+sudo pip3 install mariadb
 
 #installs a fork of MySQL, called maria data base and a python accessible api
 sudo apt install mariadb-server -y
