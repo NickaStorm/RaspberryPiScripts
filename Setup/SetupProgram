@@ -5,10 +5,10 @@
 #this downloads any available updates to make sure we have the most current version
 sudo apt update
 sudo apt upgrade -y
-sudo apt install python3-pip
 
 #installs python, apache, and flask
 sudo apt install python3
+sudo apt-get install -y python3-pip
 sudo apt install apache2 -y
 sudo apt install time
 sudo pip3 install flask
