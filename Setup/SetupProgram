@@ -14,20 +14,20 @@ sudo apt install time
 sudo pip3 install flask
 sudo pip3 install openpyxl==2.6.4
 sudo apt-get install python3.6-dev libmysqlclient-dev
-sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db
-curl -LsS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash
-sudo apt-get install -y apt-transport-https
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt install mariadb-server -y
-sudo apt install mariadb -y
-sudo apt install mysql-client-core-5.7
-sudo apt-get dist-upgrade
+#sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db
+#curl -LsS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash
+#sudo apt-get install -y apt-transport-https
+#sudo apt-get update
+#sudo apt-get upgrade
+#sudo apt install mariadb-server -y
+#sudo apt install mariadb -y
+#sudo apt-get dist-upgrade
 sudo apt-get install -y mysql-server=8.0
-sudo apt-get install libmariadb3
-sudo apt-get install libmariadb-dev
+#sudo apt install mysql-client-core-5.7
+#sudo apt-get install libmariadb3
+#sudo apt-get install libmariadb-dev
 sudo apt-get install libapache2-mod-wsgi-py3
-sudo pip3 install mariadb
+#sudo pip3 install mariadb
 sudo pip3 install matplotlib
 sudo pip3 install mysql-connector
 
