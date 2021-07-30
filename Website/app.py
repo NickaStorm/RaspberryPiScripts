@@ -1,6 +1,6 @@
 from flask import Flask, render_template, Response
 import json
-import mariadb
+import pymysql
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
@@ -15,20 +15,19 @@ plt.rcParams["figure.autolayout"] = True
 #creates a web app at http://127.0.0.1:5000 then add any sub pages
 app = Flask(__name__)
 
-config = {
-    'host': '127.0.0.1',
-    'port': 3306,
-    'user': 'root',
-    'password': 'blueberry',
-    'database': 'dividendchampions'
-}
 headers = ('Sticker', 'Name', 'Sector', 'Industry')
 jsonData = []
 
 #creates the base home page
 @app.route('/')
 def index():
-    conn = mariadb.connect(**config)
+    conn = pymysql.connect(
+        host='127.0.0.1',
+        user='user',
+        port=3306,
+        password="blueberry",
+        db='dividendchampions',
+    )
     cur = conn.cursor()
 
     cur.execute("select * from stockinfo")
@@ -45,7 +44,14 @@ def index():
 #creates the table sub page
 @app.route('/stockinfo')
 def tables():
-    conn = mariadb.connect(**config)
+    conn = pymysql.connect(
+        host='127.0.0.1',
+        user='user',
+        port=3306,
+        password="blueberry",
+        db='dividendchampions',
+    )
+
     cur = conn.cursor()
 
     cur.execute("select * from stockinfo")
@@ -60,7 +66,13 @@ def tables():
 
 @app.route('/stockgraph')
 def stockgraph():
-    conn = mariadb.connect(**config)
+    conn = pymysql.connect(
+        host='127.0.0.1',
+        user='user',
+        port=3306,
+        password="blueberry",
+        db='dividendchampions',
+    )
     cur = conn.cursor()
     cur.execute("select * from stockinfo")
     rv = cur.fetchall()
