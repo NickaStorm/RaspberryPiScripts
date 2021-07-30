@@ -1,4 +1,4 @@
-import mariadb
+import pymysql
 import openpyxl
 import csv
 import time
@@ -26,20 +26,21 @@ def convertXlToCsv():
             tempcsv.writerow([cell.value for cell in row])
 
 def insertData(info):
-    con = mariadb.connect(
-        user="user",
+    conn = pymysql.connect(
+        host='127.0.0.1',
+        user='user',
         password="blueberry",
-        host="127.0.0.1",
         port=3306,
-        database="dividendchampions"
+        db='dividendchampions',
     )
-    cur = con.cursor()
+
+    cur = conn.cursor()
     yearsonlist = info.pop(3)
     cur.execute("insert into stockinfo (stickersymbol, stockname, sector, industry) values (?, ?, ?, ?)", info)
     temptime = time.strftime('%Y-%m-%d')
     cur.execute("insert into stockdates (dateofinfo, yearsonlist) values (?, ?)", (temptime, yearsonlist))
-    con.commit()
-    con.close()
+    conn.commit()
+    conn.close()
 
 def convertCsvPrep():
     with open('test.csv', 'r') as file:
@@ -50,3 +51,6 @@ def convertCsvPrep():
 
 convertXlToCsv()
 convertCsvPrep()
+
+if __name__ == "__main__" :
+    mysqlconnect()
