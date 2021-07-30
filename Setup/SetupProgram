@@ -19,18 +19,17 @@ curl -LsS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash
 sudo apt-get install -y apt-transport-https
 sudo apt-get update
 sudo apt-get upgrade
+sudo apt install mariadb-server -y
+sudo apt install mariadb -y
+sudo apt install mysql-client-core-5.7
 sudo apt-get dist-upgrade
+sudo apt-get install mysql-server -y
 sudo apt-get install libmariadb3
 sudo apt-get install libmariadb-dev
 sudo apt-get install libapache2-mod-wsgi-py3
 sudo pip3 install mariadb
 sudo pip3 install matplotlib
 sudo pip3 install mysql-connector
-
-#installs a fork of MySQL, called maria data base and a python accessible api
-sudo apt install mariadb-server -y
-#sudo apt install mariadb -y
-sudo apt install mysql-client-core-5.7
 
 #installs the excel sheet for the dividend stocks
 wget https://bit.ly/USDividendChampions1
