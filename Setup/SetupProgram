@@ -24,7 +24,7 @@ sudo apt install mariadb -y
 sudo apt install mysql-client-core-5.7
 sudo apt-get install mysql-server -y
 sudo apt-get dist-upgrade
-sudo apt-get install mysql-server -y
+sudo apt-get install -y mysql-server=8.0
 sudo apt-get install libmariadb3
 sudo apt-get install libmariadb-dev
 sudo apt-get install libapache2-mod-wsgi-py3
