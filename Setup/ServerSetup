@@ -1,36 +1,36 @@
---need to save as sql file, to the desktop
+-- need to save as sql file, to the desktop
 
---sudo mysql -u root < /home/ubuntu/RaspberryPiScripts/Setup/ServerSetup.sql to run
+-- sudo mysql -u root < /home/ubuntu/RaspberryPiScripts/Setup/ServerSetup.sql to run
 
 create database dividendchampions;
 
---creates users
---create user 'readonly'@'localhost';
---create user 'readwrite'@'localhost';
---create user 'program'@'localhost';
+-- creates users
+-- create user 'readonly'@'localhost';
+-- create user 'readwrite'@'localhost';
+-- create user 'program'@'localhost';
 
---grants the new users their permissions
---grant Update,Insert,Select,Delete on dividendchampions.* to 'readwrite'@'localhost';
---grant Update,Insert,Select,Grant Option,Create on dividendchampions.* to 'program'@'localhost';
+-- grants the new users their permissions
+-- grant Update,Insert,Select,Delete on dividendchampions.* to 'readwrite'@'localhost';
+-- grant Update,Insert,Select,Grant Option,Create on dividendchampions.* to 'program'@'localhost';
 
---logs into dividendchampions and creates two tables
---use dividendchampions;
---create table stockdates(dateofinfo date, yearsonlist int(100));
---create table stockinfo(stickersymbol varchar(30), stockname varchar(60), sector varchar(60), industry varchar(60));
---
---flush privileges;
---set password for 'root'@'localhost' = password('blueberry');
---use mysql
---create user 'user'@'localhost' identified by 'blueberry';
---use dividendchampions;
---grant all privileges on *.* to 'user'@'localhost' identified by 'blueberry';
+-- logs into dividendchampions and creates two tables
+-- use dividendchampions;
+-- create table stockdates(dateofinfo date, yearsonlist int(100));
+-- create table stockinfo(stickersymbol varchar(30), stockname varchar(60), sector varchar(60), industry varchar(60));
 
---this section only displays for the admin
---show databases;
---select user from mysql.user;
---show grants for readonly@localhost;
---show grants for readwrite@localhost;
---show grants for program@localhost;
---show tables;
---describe stockdates;
---describe stockinfo;
+flush privileges;
+set password for 'root'@'localhost' = password('blueberry');
+use mysql
+create user 'user'@'localhost' identified by 'blueberry';
+use dividendchampions;
+grant all privileges on *.* to 'user'@'localhost' identified by 'blueberry';
+
+-- this section only displays for the admin
+-- show databases;
+-- select user from mysql.user;
+-- show grants for readonly@localhost;
+-- show grants for readwrite@localhost;
+-- show grants for program@localhost;
+-- show tables;
+-- describe stockdates;
+-- describe stockinfo;
