@@ -2,7 +2,7 @@
 
 -- sudo mysql -u root < /home/ubuntu/RaspberryPiScripts/Setup/ServerSetup.sql to run
 
-create database dividendchampions;
+CREATE database dividendchampions;
 
 -- creates users
 -- create user 'readonly'@'localhost';
@@ -18,12 +18,12 @@ create database dividendchampions;
 -- create table stockdates(dateofinfo date, yearsonlist int(100));
 -- create table stockinfo(stickersymbol varchar(30), stockname varchar(60), sector varchar(60), industry varchar(60));
 
-flush privileges;
-set password for 'root'@'localhost' = password('blueberry');
+-- flush privileges;
+SET password FOR 'root'@'localhost' = password('blueberry');
 use mysql
-create user 'user'@'localhost' identified by 'blueberry';
+CREATE USER 'user'@'localhost' identified BY 'blueberry';
 use dividendchampions;
-grant all privileges on *.* to 'user'@'localhost' identified by 'blueberry';
+GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost' identified BY 'blueberry';
 
 -- this section only displays for the admin
 -- show databases;
