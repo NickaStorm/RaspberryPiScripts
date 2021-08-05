@@ -20,7 +20,7 @@ CREATE database dividendchampions;
 
 -- flush privileges;
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'blueberry';
---SET password FOR "root'@'localhost" = password("blueberry");
+-- SET password FOR "root'@'localhost" = password("blueberry");
 use mysql
 CREATE USER 'user'@'localhost' identified BY 'blueberry';
 use dividendchampions;
