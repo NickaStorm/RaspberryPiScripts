@@ -14,16 +14,16 @@ create database dividendchampions;
 --grant Update,Insert,Select,Grant Option,Create on dividendchampions.* to 'program'@'localhost';
 
 --logs into dividendchampions and creates two tables
-use dividendchampions;
-create table stockdates(dateofinfo date, yearsonlist int(100));
-create table stockinfo(stickersymbol varchar(30), stockname varchar(60), sector varchar(60), industry varchar(60));
-
-flush privileges;
-set password for 'root'@'localhost' = password('blueberry');
-use mysql
-create user 'user'@'localhost' identified by 'blueberry';
-use dividendchampions;
-grant all privileges on *.* to 'user'@'localhost' identified by 'blueberry';
+--use dividendchampions;
+--create table stockdates(dateofinfo date, yearsonlist int(100));
+--create table stockinfo(stickersymbol varchar(30), stockname varchar(60), sector varchar(60), industry varchar(60));
+--
+--flush privileges;
+--set password for 'root'@'localhost' = password('blueberry');
+--use mysql
+--create user 'user'@'localhost' identified by 'blueberry';
+--use dividendchampions;
+--grant all privileges on *.* to 'user'@'localhost' identified by 'blueberry';
 
 --this section only displays for the admin
 --show databases;
