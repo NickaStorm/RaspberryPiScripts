@@ -13,11 +13,6 @@ CREATE database dividendchampions;
 -- grant Update,Insert,Select,Delete on dividendchampions.* to 'readwrite'@'localhost';
 -- grant Update,Insert,Select,Grant Option,Create on dividendchampions.* to 'program'@'localhost';
 
-use dividendchampions;
-CREATE TABLE stockdates(dateofinfo date, yearsonlist int(100));
-CREATE TABLE stockinfo(stickersymbol varchar(30), stockname varchar(60), sector varchar(60), industry varchar(60));
-show tables;
-
 flush PRIVILEGES;
 SET password FOR 'root'@'localhost' = 'blueberry';
 use mysql;
@@ -25,6 +20,10 @@ CREATE USER 'user'@'localhost' identified BY 'blueberry';
 use dividendchampions;
 GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost';
 
+use dividendchampions;
+CREATE TABLE stockdates(dateofinfo date, yearsonlist int(100));
+CREATE TABLE stockinfo(stickersymbol varchar(30), stockname varchar(60), sector varchar(60), industry varchar(60));
+show tables;
 -- this section only displays for the admin
 -- show databases;
 -- select user from mysql.user;
