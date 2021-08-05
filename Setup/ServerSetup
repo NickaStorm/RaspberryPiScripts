@@ -23,7 +23,7 @@ SET password FOR 'root'@'localhost' = 'blueberry';
 use mysql
 CREATE USER 'user'@'localhost' identified BY 'blueberry';
 use dividendchampions;
-GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost' identified BY 'blueberry';
+GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost';
 
 -- this section only displays for the admin
 -- show databases;
