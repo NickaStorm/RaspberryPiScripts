@@ -14,8 +14,8 @@ CREATE database dividendchampions;
 -- grant Update,Insert,Select,Grant Option,Create on dividendchampions.* to 'program'@'localhost';
 
 use dividendchampions;
-CREATE TABLE dividendchampions.stockdates(dateofinfo date, yearsonlist int(100));
-CREATE TABLE dividendchampions.stockinfo(stickersymbol varchar(30), stockname varchar(60), sector varchar(60), industry varchar(60));
+CREATE TABLE stockdates(dateofinfo date, yearsonlist int(100));
+CREATE TABLE stockinfo(stickersymbol varchar(30), stockname varchar(60), sector varchar(60), industry varchar(60));
 show tables;
 
 flush PRIVILEGES;
