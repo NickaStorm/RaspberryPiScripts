@@ -19,7 +19,7 @@ CREATE database dividendchampions;
 -- create table stockinfo(stickersymbol varchar(30), stockname varchar(60), sector varchar(60), industry varchar(60));
 
 -- flush privileges;
-SET password FOR 'root'@'localhost' = password('blueberry');
+SET password FOR "root'@'localhost" = password("blueberry");
 use mysql
 CREATE USER 'user'@'localhost' identified BY 'blueberry';
 use dividendchampions;
