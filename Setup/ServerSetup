@@ -13,9 +13,10 @@ CREATE database dividendchampions;
 -- grant Update,Insert,Select,Delete on dividendchampions.* to 'readwrite'@'localhost';
 -- grant Update,Insert,Select,Grant Option,Create on dividendchampions.* to 'program'@'localhost';
 
-USE dividendchampions;
+use dividendchampions;
 CREATE TABLE dividendchampions.stockdates(dateofinfo date, yearsonlist int(100));
 CREATE TABLE dividendchampions.stockinfo(stickersymbol varchar(30), stockname varchar(60), sector varchar(60), industry varchar(60));
+show tables;
 
 flush PRIVILEGES;
 SET password FOR 'root'@'localhost' = 'blueberry';
