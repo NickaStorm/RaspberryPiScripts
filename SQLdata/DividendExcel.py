@@ -36,7 +36,7 @@ def insertData(info):
 
     cur = conn.cursor()
     yearsonlist = info.pop(3)
-    cur.execute("insert into stockinfo (stickersymbol, stockname, sector, industry) values (?, ?, ?, ?)", [info])
+    # cur.execute("insert into stockinfo (stickersymbol, stockname, sector, industry) values (?, ?, ?, ?)", [info])
     temptime = time.strftime('%Y-%m-%d')
     cur.execute("insert into stockdates (dateofinfo, yearsonlist) values (?, ?)", [temptime, yearsonlist])
     conn.commit()
@@ -51,6 +51,3 @@ def convertCsvPrep():
 
 convertXlToCsv()
 convertCsvPrep()
-
-if __name__ == "__main__" :
-    mysqlconnect()
