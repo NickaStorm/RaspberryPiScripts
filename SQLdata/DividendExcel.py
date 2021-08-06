@@ -36,7 +36,7 @@ def insertData(info):
 
     cur = conn.cursor()
     yearsonlist = info.pop(3)
-    # cur.execute("insert into stockinfo (stickersymbol, stockname, sector, industry) values (?, ?, ?, ?)", [info])
+    cur.execute("insert into stockinfo (stickersymbol, stockname, sector, industry) values (?, ?, ?, ?)", info[0], info[1], info[2], info[3])
     temptime = time.strftime('%Y-%m-%d')
     cur.execute("insert into stockdates (dateofinfo, yearsonlist) values (?, ?)", [temptime, yearsonlist])
     conn.commit()
