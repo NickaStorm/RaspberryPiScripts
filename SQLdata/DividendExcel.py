@@ -30,9 +30,10 @@ def insertData(info):
     conn = mysql.connector.connect(
         # host='127.0.0.1',
         user='user',
-        passwd='blueberry',
+        password='blueberry',
         # port=3306,
-        database='dividendchampions'
+        database='dividendchampions',
+        auth_plugin='mysql_native_password'
     )
 
     cur = conn.cursor(prepared=True)
