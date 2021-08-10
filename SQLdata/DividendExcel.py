@@ -2,6 +2,7 @@ import pymysql
 import openpyxl
 import csv
 import time
+import mysql.connector
 
 #python3 DividendExcel.py to run in Desktop directory
 
@@ -26,19 +27,27 @@ def convertXlToCsv():
             tempcsv.writerow([cell.value for cell in row])
 
 def insertData(info):
-    conn = pymysql.connect(
+    conn = mysql.connector.connect(
         host='127.0.0.1',
         user='user',
         password="blueberry",
         port=3306,
-        db='dividendchampions',
+        database='dividendchampions',
     )
 
-    cur = conn.cursor()
+    cur = conn.cursor(prepared=True)
     yearsonlist = info.pop(3)
-    cur.execute("insert into stockinfo (stickersymbol, stockname, sector, industry) values (?, ?, ?, ?)", info[0], info[1], info[2], info[3])
+
+    stockinfo_query = """ INSERT INTO stockinfo
+                       (stickersymbol, stockname, sector, industry) VALUES (%s,%s,%s,%s)"""
+    stockdates_query = """ INSERT INTO stockdates
+                           (dateofinfo, yearsonlist) VALUES (%s,%s)"""
     temptime = time.strftime('%Y-%m-%d')
-    cur.execute("insert into stockdates (dateofinfo, yearsonlist) values (?, ?)", [temptime, yearsonlist])
+    stockdates_info = (temptime, yearsonlist)
+
+    cur.execute(stockinfo_query, info)
+    cur.execute(stockdates_query, stockdates_info)
+
     conn.commit()
     conn.close()
 
