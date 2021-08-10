@@ -28,11 +28,11 @@ def convertXlToCsv():
 
 def insertData(info):
     conn = mysql.connector.connect(
-        host='127.0.0.1',
+        # host='127.0.0.1',
         user='user',
         password='blueberry',
         # port=3306,
-        database='dividendchampions',
+        database='dividendchampions'
     )
 
     cur = conn.cursor(prepared=True)
