@@ -28,7 +28,7 @@ def convertXlToCsv():
 
 def insertData(info):
     conn = mysql.connector.connect(
-        # host='127.0.0.1',
+        host='localhost',
         user='user',
         password='blueberry',
         # port=3306,
