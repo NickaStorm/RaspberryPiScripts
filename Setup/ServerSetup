@@ -1,6 +1,6 @@
 -- need to save as sql file, to the desktop
 
--- sudo mysql -u root < /home/ubuntu/RaspberryPiScripts/Setup/ServerSetup.sql to run
+-- sudo mysql < /home/ubuntu/RaspberryPiScripts/Setup/ServerSetup.sql to run
 
 CREATE database dividendchampions;
 
