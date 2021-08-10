@@ -1,4 +1,3 @@
-import pymysql
 import openpyxl
 import csv
 import time

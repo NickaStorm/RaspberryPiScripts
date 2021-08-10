@@ -1,6 +1,6 @@
 from flask import Flask, render_template, Response
 import json
-import pymysql
+import mysql.connector
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
@@ -21,10 +21,9 @@ jsonData = []
 #creates the base home page
 @app.route('/')
 def index():
-    conn = pymysql.connect(
-        host='127.0.0.1',
+    conn = mysql.connector.connect(
+        host='localhost',
         user='user',
-        port=3306,
         password="blueberry",
         db='dividendchampions',
     )
@@ -44,10 +43,9 @@ def index():
 #creates the table sub page
 @app.route('/stockinfo')
 def tables():
-    conn = pymysql.connect(
-        host='127.0.0.1',
+    conn = mysql.connector.connect(
+        host='localhost',
         user='user',
-        port=3306,
         password="blueberry",
         db='dividendchampions',
     )
@@ -66,10 +64,9 @@ def tables():
 
 @app.route('/stockgraph')
 def stockgraph():
-    conn = pymysql.connect(
-        host='127.0.0.1',
+    conn = mysql.connector.connect(
+        host='localhost',
         user='user',
-        port=3306,
         password="blueberry",
         db='dividendchampions',
     )
