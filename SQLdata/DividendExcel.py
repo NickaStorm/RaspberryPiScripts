@@ -30,7 +30,7 @@ def insertData(info):
     conn = mysql.connector.connect(
         # host='127.0.0.1',
         user='user',
-        password='blueberry',
+        passwd='blueberry',
         # port=3306,
         database='dividendchampions'
     )
