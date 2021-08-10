@@ -32,6 +32,7 @@ sudo pip3 install matplotlib
 #sudo pip3 install mysql-connector
 sudo pip3 install PyMySQL
 sudo pip3 install mysql.connector
+sudo pip3 install mysql.connector-python
 
 #installs the excel sheet for the dividend stocks
 wget https://bit.ly/USDividendChampions1
