@@ -84,5 +84,3 @@ def stockgraph():
     output = BytesIO()
     FigureCanvas(fig).print_png(output)
     return Response(output.getvalue(), mimetype='image/png')
-
-app.run()
