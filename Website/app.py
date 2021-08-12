@@ -22,7 +22,7 @@ jsonData = []
 @app.route('/')
 def index():
     conn = mysql.connector.connect(
-        host='localhost',
+        host='127.0.0.1',
         user='user',
         password="blueberry",
         db='dividendchampions',
@@ -44,7 +44,7 @@ def index():
 @app.route('/stockinfo')
 def tables():
     conn = mysql.connector.connect(
-        host='localhost',
+        host='127.0.0.1',
         user='user',
         password="blueberry",
         db='dividendchampions',
@@ -65,7 +65,7 @@ def tables():
 @app.route('/stockgraph')
 def stockgraph():
     conn = mysql.connector.connect(
-        host='localhost',
+        host='127.0.0.1',
         user='user',
         password="blueberry",
         db='dividendchampions',
