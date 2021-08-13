@@ -1,11 +1,9 @@
 from flask import Flask, render_template, Response
-import json
 import mysql.connector
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
 from io import BytesIO
-import numpy as np
 
 plt.rcParams["figure.figsize"] = [7.50, 3.50]
 plt.rcParams["figure.autolayout"] = True
@@ -16,7 +14,7 @@ plt.rcParams["figure.autolayout"] = True
 app = Flask(__name__)
 
 headers = ('Sticker', 'Name', 'Sector', 'Industry')
-jsonData = []
+data = []
 
 #creates the base home page
 @app.route('/')
@@ -34,7 +32,7 @@ def index():
     # serialize results into JSON
     rv = cur.fetchall()
     for result in rv:
-        jsonData.append(result)
+        data.append(result)
 
     return render_template('homepage.html')
 
@@ -57,9 +55,9 @@ def tables():
     # serialize results into JSON
     rv = cur.fetchall()
     for result in rv:
-        jsonData.append(result)
+        data.append(result)
 
-    return render_template('index.html', headings=headers, data=jsonData)
+    return render_template('index.html', headings=headers, data=data)
 
 
 @app.route('/stockgraph')
@@ -74,7 +72,7 @@ def stockgraph():
     cur.execute("select * from stockinfo")
     rv = cur.fetchall()
     for result in rv:
-        jsonData.append(result)
+        data.append(result)
 
     fig = Figure()
     axis = fig.add_subplot(1, 1, 1)
