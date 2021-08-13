@@ -36,7 +36,7 @@ def index():
     for result in rv:
         jsonData.append(result)
 
-    return json.dumps(jsonData)
+    return render_template('homepage.html')
 
 
 #the index file has to be in a dir named templates in webapp
