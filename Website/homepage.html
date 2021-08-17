@@ -13,7 +13,18 @@
     color: white;
     }
 
+    .subpagelist {
+    border: 2px solid black;
+    height: 60px;
+    font-size: 50px;
+    font-family:verdana;
+    padding: 5px;
+    }
 
+    .link {
+    color: black;
+    text-decoration: none;
+    }
 </style>
 
 <head>
@@ -23,9 +34,9 @@
 <body>
 
 <div class="title">Project Prometheus</div>
-<nav style="border: 2px solid black; height: 60px; font-size: 50px; font-family:verdana; padding: 5px;">
-<a href="/stockinfo" style="color: black; text-decoration: none;">Table</a> |
-<a href="/stockgraph" style="color: black; text-decoration: none;">Graphs</a> |
+<nav class="subpagelist">
+<a href="/stockinfo" class="link">Table</a> |
+<a href="/stockgraph" class="link">Graphs</a> |
 </nav>
 
 </body>
