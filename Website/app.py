@@ -1,5 +1,7 @@
 from flask import Flask, render_template, Response
 import mysql.connector
+import os
+os.environ['MPLCONFIGDIR'] = os.getcwd() + "/configs/"
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
