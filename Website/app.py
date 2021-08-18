@@ -1,6 +1,5 @@
 from flask import Flask, render_template, Response
 import mysql.connector
-import matplotlib.fig_to_html
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
