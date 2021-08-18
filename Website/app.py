@@ -42,9 +42,10 @@ def index():
     output = BytesIO()
     FigureCanvas(fig).print_png(output)
     finalgraph = Response(output.getvalue(), mimetype='image/png')
+    graph = plt.fig_to_html(fig)
     # return render_template('homepage.html', graph=Response(output.getvalue(), mimetype='image/png'))
     # return Response(output.getvalue(), mimetype='image/png')
-    return render_template('homepage.html', graph=finalgraph)
+    return render_template('homepage.html', graph=graph)
 
 #the index file has to be in a dir named templates in webapp
 #creates the table sub page
