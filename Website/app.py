@@ -42,7 +42,7 @@ def index():
     output = BytesIO()
     FigureCanvas(fig).print_png(output)
 
-    return render_template('homepage.html', graph=Response(output.getvalue(), mimetype='image/png'))
+    return render_template('homepage.html', graph=Response(output.getvalue(), mimetype='images/png'))
 
 
 #the index file has to be in a dir named templates in webapp
