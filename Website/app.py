@@ -34,7 +34,15 @@ def index():
     for result in rv:
         data.append(result)
 
-    return render_template('homepage.html')
+    fig = Figure()
+    axis = fig.add_subplot(1, 1, 1)
+    x1 = [1, 2, 3, 4]
+    y1 = [2, 6, 1, 3]
+    axis.plot(x1, y1)
+    output = BytesIO()
+    FigureCanvas(fig).print_png(output)
+
+    return render_template('homepage.html', graph=Response(output.getvalue(), mimetype='image/png'))
 
 
 #the index file has to be in a dir named templates in webapp
