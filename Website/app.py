@@ -44,8 +44,8 @@ def index():
     y1 = [2, 6, 1, 3]
     axis.plot(x1, y1)
     output = BytesIO()
-    FigureCanvas(fig).print_png(output)
-    finalgraph = Response(output.getvalue(), mimetype='image/png')
+    # FigureCanvas(fig).print_png(output)
+    # finalgraph = Response(output.getvalue(), mimetype='image/png')
     graph = mpld3.fig_to_html(fig)
     # return render_template('homepage.html', graph=Response(output.getvalue(), mimetype='image/png'))
     # return Response(output.getvalue(), mimetype='image/png')
