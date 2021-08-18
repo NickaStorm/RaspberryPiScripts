@@ -1,9 +1,12 @@
 from flask import Flask, render_template, Response
 import mysql.connector
+import matplotlib.fig_to_html
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
 from io import BytesIO
+import mpld3
+from mpld3 import fig_to_html, plugins
 
 plt.rcParams["figure.figsize"] = [7.50, 3.50]
 plt.rcParams["figure.autolayout"] = True
@@ -42,7 +45,7 @@ def index():
     output = BytesIO()
     FigureCanvas(fig).print_png(output)
     finalgraph = Response(output.getvalue(), mimetype='image/png')
-    graph = plt.fig_to_html(fig)
+    graph = mpld3.fig_to_html(fig)
     # return render_template('homepage.html', graph=Response(output.getvalue(), mimetype='image/png'))
     # return Response(output.getvalue(), mimetype='image/png')
     return render_template('homepage.html', graph=graph)

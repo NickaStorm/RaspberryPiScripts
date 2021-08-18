@@ -29,6 +29,7 @@ sudo apt-get install -y mysql-server
 sudo apt-get install libapache2-mod-wsgi-py3
 #sudo pip3 install mariadb
 sudo pip3 install matplotlib
+sudo pip3 install mpld3
 #sudo pip3 install mysql-connector
 sudo pip3 install PyMySQL
 sudo pip3 install mysql.connector
