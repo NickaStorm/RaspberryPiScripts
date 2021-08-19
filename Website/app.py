@@ -50,7 +50,58 @@ def index():
     # return render_template('homepage.html', graph=Response(output.getvalue(), mimetype='image/png'))
     # return Response(output.getvalue(), mimetype='image/png')
     # return render_template('homepage.html', graph=graph)
-    return graph
+    return """
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif
+    }
+
+    .title {
+    text-align:left;
+    border-bottom: 2px solid black;
+    font-size: 85px;
+    font-family:Fantasy;
+    background-color: dimgray;
+    color: white;
+    padding-left: 10px;
+    height: 110px;
+    }
+
+    .link {
+    text-decoration: none;
+    font-family:Fantasy;
+    font-size: 40px;
+    color: gainsboro;
+    padding: 0px;
+    padding-left: 50px;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Explore Prometheus</title>
+</head>
+
+<body>
+
+
+<div class="title">Project Prometheus
+    <a href="/stockinfo" class="link">Table</a>
+    <a href="/stockgraph" class="link">Graphs</a>
+    <a href="/" class="link">Info</a>
+</div>
+
+<img src="{{ """ + graph + """}}">
+
+</body>
+</html>
+"""
+
 #the index file has to be in a dir named templates in webapp
 #creates the table sub page
 @app.route('/stockinfo')
