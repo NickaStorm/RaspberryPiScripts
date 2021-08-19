@@ -81,14 +81,14 @@ def index():
     <meta charset="UTF-8">
     <title>Explore Prometheus</title>
 </head>
-<body>
+<body style="background-color: gainsboro;">
 
 <div class="title">Project Prometheus
     <a href="/stockinfo" class="link">Table</a>
     <a href="/stockgraph" class="link">Graphs</a>
     <a href="/" class="link">Info</a>
 </div>
-<center style="padding-top: 50px; background-color: gainsboro; height: 100%;">
+<center style="padding-top: 50px;">
 """ + graph + """
 </center>
 
