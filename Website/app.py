@@ -95,8 +95,10 @@ def index():
     <a href="/stockgraph" class="link">Graphs</a>
     <a href="/" class="link">Info</a>
 </div>
-
-<img src="{{ """ + graph + """}}">
+<div>
+""" + graph + """
+</div>
+<img src="{{ """ + graph + """ }}">
 
 </body>
 </html>
