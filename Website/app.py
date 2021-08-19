@@ -30,10 +30,8 @@ def index():
         db='dividendchampions',
     )
     cur = conn.cursor()
-
     cur.execute("select * from stockinfo")
 
-    # serialize results into JSON
     rv = cur.fetchall()
     for result in rv:
         data.append(result)
@@ -43,17 +41,10 @@ def index():
     x1 = [1, 2, 3, 4]
     y1 = [2, 6, 1, 3]
     axis.plot(x1, y1)
-    output = BytesIO()
-    # FigureCanvas(fig).print_png(output)
-    # finalgraph = Response(output.getvalue(), mimetype='image/png')
     graph = mpld3.fig_to_html(fig)
-    # return render_template('homepage.html', graph=Response(output.getvalue(), mimetype='image/png'))
-    # return Response(output.getvalue(), mimetype='image/png')
-    # return render_template('homepage.html', graph=graph)
     return """
 <!DOCTYPE html>
 <html lang="en">
-
 <style>
     *{
     margin: 0;
@@ -81,23 +72,18 @@ def index():
     padding-left: 50px;
     }
 </style>
-
 <head>
     <meta charset="UTF-8">
     <title>Explore Prometheus</title>
 </head>
-
 <body>
-
 
 <div class="title">Project Prometheus
     <a href="/stockinfo" class="link">Table</a>
     <a href="/stockgraph" class="link">Graphs</a>
     <a href="/" class="link">Info</a>
 </div>
-<div>
-""" + graph + """
-</div>
+
 <img src="{{ """ + graph + """ }}">
 
 </body>
