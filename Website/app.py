@@ -71,6 +71,11 @@ def index():
     padding: 0px;
     padding-left: 50px;
     }
+    
+    .graph {
+    border: 2px solid black
+    text-align: center;
+    }
 </style>
 <head>
     <meta charset="UTF-8">
