@@ -49,8 +49,8 @@ def index():
     graph = mpld3.fig_to_html(fig)
     # return render_template('homepage.html', graph=Response(output.getvalue(), mimetype='image/png'))
     # return Response(output.getvalue(), mimetype='image/png')
-    return render_template('homepage.html', graph=graph)
-
+    # return render_template('homepage.html', graph=graph)
+    return graph
 #the index file has to be in a dir named templates in webapp
 #creates the table sub page
 @app.route('/stockinfo')
