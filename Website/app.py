@@ -67,7 +67,7 @@ def index():
     text-decoration: none;
     font-family:Fantasy;
     font-size: 40px;
-    color: gainsboro;
+    color: lightsteelblue;
     padding: 0px;
     padding-left: 50px;
     }
@@ -81,11 +81,10 @@ def index():
     <meta charset="UTF-8">
     <title>Explore Prometheus</title>
 </head>
-<body style="background-color: mintcream;">
+<body style="background-color: whitesmoke;">
 
 <div class="title">Project Prometheus
     <a href="/stockinfo" class="link">Table</a>
-    <a href="/stockgraph" class="link">Graphs</a>
     <a href="/" class="link">Info</a>
 </div>
 <center style="padding-top: 50px;">
@@ -118,26 +117,25 @@ def tables():
 
     return render_template('index.html', headings=headers, data=data)
 
-
-@app.route('/stockgraph')
-def stockgraph():
-    conn = mysql.connector.connect(
-        host='127.0.0.1',
-        user='user',
-        password="blueberry",
-        db='dividendchampions',
-    )
-    cur = conn.cursor()
-    cur.execute("select * from stockinfo")
-    rv = cur.fetchall()
-    for result in rv:
-        data.append(result)
-
-    fig = Figure()
-    axis = fig.add_subplot(1, 1, 1)
-    x1 = [1, 2, 3, 4]
-    y1 = [2, 6, 1, 3]
-    axis.plot(x1, y1)
-    output = BytesIO()
-    FigureCanvas(fig).print_png(output)
-    return Response(output.getvalue(), mimetype='image/png')
+# @app.route('/stockgraph')
+# def stockgraph():
+#     conn = mysql.connector.connect(
+#         host='127.0.0.1',
+#         user='user',
+#         password="blueberry",
+#         db='dividendchampions',
+#     )
+#     cur = conn.cursor()
+#     cur.execute("select * from stockinfo")
+#     rv = cur.fetchall()
+#     for result in rv:
+#         data.append(result)
+#
+#     fig = Figure()
+#     axis = fig.add_subplot(1, 1, 1)
+#     x1 = [1, 2, 3, 4]
+#     y1 = [2, 6, 1, 3]
+#     axis.plot(x1, y1)
+#     output = BytesIO()
+#     FigureCanvas(fig).print_png(output)
+#     return Response(output.getvalue(), mimetype='image/png')
