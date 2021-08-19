@@ -67,7 +67,7 @@ def index():
     text-decoration: none;
     font-family:Fantasy;
     font-size: 40px;
-    color: lightsteelblue;
+    color: gainsboro;
     padding: 0px;
     padding-left: 50px;
     }
