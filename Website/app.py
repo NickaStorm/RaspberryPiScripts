@@ -87,8 +87,6 @@ def index():
 """ + graph + """
 </div>
 
-<img src="{{ """ + graph + """ }}">
-
 </body>
 </html>
 """
