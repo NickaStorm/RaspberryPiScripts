@@ -88,7 +88,7 @@ def index():
     <a href="/stockgraph" class="link">Graphs</a>
     <a href="/" class="link">Info</a>
 </div>
-<center style="padding-top: 50px">
+<center style="padding-top: 50px; background-color: gainsboro;">
 """ + graph + """
 </center>
 
