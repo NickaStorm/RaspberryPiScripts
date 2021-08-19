@@ -46,7 +46,7 @@ def index():
     output = BytesIO()
     # FigureCanvas(fig).print_png(output)
     # finalgraph = Response(output.getvalue(), mimetype='image/png')
-    graph = mpld3.fig_to_html(fig)
+    graph = mpld3.fig_to_html(output)
     # return render_template('homepage.html', graph=Response(output.getvalue(), mimetype='image/png'))
     # return Response(output.getvalue(), mimetype='image/png')
     return render_template('homepage.html', graph=graph)
