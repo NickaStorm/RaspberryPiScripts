@@ -11,6 +11,7 @@ from mpld3 import fig_to_html, plugins
 
 plt.rcParams["figure.figsize"] = [7.50, 3.50]
 plt.rcParams["figure.autolayout"] = True
+plt.rcParams["figure.facecolor"] = "yellow"
 
 #this script needs to be in home/pi/webapp along with the templates dir
 
@@ -41,10 +42,10 @@ def index():
     y1 = [2, 6, 1, 3]
     axis.plot(x1, y1)
     # fig.ylabel("Dividend Yield", fontweight='bold')
-    axis.xlabel("Date", fontweight='bold')
-    ax = plt.axes()
-    ax.set_facecolor("yellow")
-    plt.title("Dividend Stock Yields")
+    # axis.xlabel("Date", fontweight='bold')
+    # ax = plt.axes()
+    # ax.set_facecolor("yellow")
+    # plt.title("Dividend Stock Yields")
 
     graph = mpld3.fig_to_html(fig)
     return """
