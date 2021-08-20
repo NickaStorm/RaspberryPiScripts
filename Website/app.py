@@ -40,6 +40,9 @@ def index():
     x = [4, 12, 14, 4, 22, 18]
     y = [3, 10, 16, 3, 20, 17]
     plt.plot([1, 2, 3, 4], [1, 4, 9, 16])
+    plt.xlabel("Date")
+    plt.ylabel("Yield")
+    plt.title("Dividend Stock Yields")
 
     # axis = fig.add_subplot(1, 1, 1)
     # x1 = [1, 2, 3, 4]
