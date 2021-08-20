@@ -36,11 +36,16 @@ def index():
     for result in rv:
         data.append(result)
 
-    fig = Figure()
-    axis = fig.add_subplot(1, 1, 1)
-    x1 = [1, 2, 3, 4]
-    y1 = [2, 6, 1, 3]
-    axis.plot(x1, y1)
+    fig = plt.figure()
+    x = [4, 12, 14, 4, 22, 18]
+    y = [3, 10, 16, 3, 20, 17]
+    plt.plot([1, 2, 3, 4], [1, 4, 9, 16], mec='w', mew=5, ms=20)
+
+    # axis = fig.add_subplot(1, 1, 1)
+    # x1 = [1, 2, 3, 4]
+    # y1 = [2, 6, 1, 3]
+    # axis.plot(x1, y1)
+
     # fig.ylabel("Dividend Yield", fontweight='bold')
     # axis.xlabel("Date", fontweight='bold')
     # ax = plt.axes()
