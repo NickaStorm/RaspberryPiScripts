@@ -40,7 +40,7 @@ def index():
     x1 = [1, 2, 3, 4]
     y1 = [2, 6, 1, 3]
     axis.plot(x1, y1)
-    fig.ylabel("Dividend Yield", fontweight='bold')
+    # fig.ylabel("Dividend Yield", fontweight='bold')
     axis.xlabel("Date", fontweight='bold')
     ax = plt.axes()
     ax.set_facecolor("yellow")
