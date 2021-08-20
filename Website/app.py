@@ -37,12 +37,13 @@ def index():
         data.append(result)
 
     fig = plt.figure()
-    x = [4, 12, 14, 4, 22, 18]
-    y = [3, 10, 16, 3, 20, 17]
-    plt.plot(["7/8/2021", "8/8/2021", "9/8/2021", "10/8/2021"], [4.64, 4.6, 4.48, 4.42])
+    ticks = [0, 1, 2, 3, 4, 5]
+    labels = ["August 7", "August 8", "August 9", "August 10", "August 11", "August 12"]
+    plt.xticks(ticks, labels)
+    plt.plot([1, 2, 3, 4, 5, 6], [217, 215, 213, 205, 231, 197])
     plt.xlabel("Date", fontweight='bold', fontsize=24)
     plt.ylabel("Yield", fontweight='bold', fontsize=24)
-    plt.title("Caterpillar Inc Dividend Stock Yields", fontweight='bold', fontsize=36)
+    plt.title("<NOT REAL>Dividend Stock Yields", fontweight='bold', fontsize=36)
 
     # axis = fig.add_subplot(1, 1, 1)
     # x1 = [1, 2, 3, 4]
