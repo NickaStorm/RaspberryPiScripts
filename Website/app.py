@@ -11,7 +11,6 @@ from mpld3 import fig_to_html, plugins
 
 plt.rcParams["figure.figsize"] = [7.50, 3.50]
 plt.rcParams["figure.autolayout"] = True
-plt.rcParams['font.family'] = 'fantasy'
 
 #this script needs to be in home/pi/webapp along with the templates dir
 
