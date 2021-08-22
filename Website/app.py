@@ -17,7 +17,7 @@ plt.rcParams["figure.autolayout"] = True
 #creates a web app at http://127.0.0.1:5000 then add any sub pages
 app = Flask(__name__)
 
-headers = ('Sticker', 'Name', 'Sector', 'Industry')
+headers = ('Ticker', 'Name', 'Sector', 'Industry')
 data = []
 
 #creates the base home page
