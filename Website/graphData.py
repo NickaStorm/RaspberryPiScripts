@@ -34,8 +34,11 @@ def getTickerData(ticker):
     listOfTicker = [tickerData.info["shortName"], tickerData.info["currentPrice"], tickerData.info["forwardPE"], tickerData.info["sector"], curDate]
     return listOfTicker
 
+indexNum = 0
+
 for item in sqlData:
-    cur.execute(graphData_query, getTickerData(item[0]))
+    cur.execute(graphData_query, getTickerData(sqlData[indexNum]))
+    indexNum += 1
     print(item)
 
 conn.commit()
