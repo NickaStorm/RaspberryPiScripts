@@ -18,11 +18,11 @@ plt.rcParams["figure.autolayout"] = True
 app = Flask(__name__)
 
 headers = ('Ticker', 'Name', 'Sector', 'Industry')
-data = []
 
 #creates the base home page
 @app.route('/')
 def index():
+    data = []
     conn = mysql.connector.connect(
         host='127.0.0.1',
         user='user',
