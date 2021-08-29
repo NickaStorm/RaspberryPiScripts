@@ -46,10 +46,11 @@ indexNum = 0
 for result in rv:
     sqlData.append(result)
     print(result)
-    cur.execute(graphData_query, getTickerData(sqlData, indexNum))
+    # cur.execute(graphData_query, getTickerData(sqlData, indexNum))
     indexNum += 1
     # print(item)
 
+print(sqlData)
 conn.commit()
 conn.close()
 
