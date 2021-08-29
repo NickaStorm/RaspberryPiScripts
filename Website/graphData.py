@@ -5,7 +5,6 @@ import mysql.connector
 curDate = datetime.date.today()
 Date1 = curDate - datetime.timedelta(days=1)
 # Date2 = curDate - datetime.timedelta(days=2)
-tickerSymbol = 'DOV'
 sqlData = []
 
 conn = mysql.connector.connect(
@@ -25,11 +24,18 @@ rv = cur.fetchall()
 for result in rv:
     sqlData.append(result)
 
-tickerData = yf.Ticker(tickerSymbol)
-stockInfo = [tickerData.info["shortName"], tickerData.info["currentPrice"], tickerData.info["forwardPE"], tickerData.info["sector"], curDate]
+# tickerSymbol = 'DOV'
+
+# tickerData = yf.Ticker(tickerSymbol)
+# stockInfo = [tickerData.info["shortName"], tickerData.info["currentPrice"], tickerData.info["forwardPE"], tickerData.info["sector"], curDate]
+
+def getTickerData(ticker):
+    tickerData = yf.Ticker(ticker)
+    return [tickerData.info["shortName"], tickerData.info["currentPrice"], tickerData.info["forwardPE"], tickerData.info["sector"], curDate]
+
 
 for item in sqlData:
-    cur.execute(graphData_query, stockInfo)
+    cur.execute(graphData_query, getTickerData(item))
     print(item)
 
 conn.commit()
