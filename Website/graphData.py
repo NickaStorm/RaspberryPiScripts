@@ -40,6 +40,8 @@ def getTickerData(ticker, stockNum):
     # FIX THIS ABOMINATION LATER
     if stockTicker == "BFB":
         stockTicker = "BF-B"
+    elif stockTicker == "EV":
+        stockTicker = "ETV"
 
     tickerData = yf.Ticker(stockTicker)
     listOfTicker = [tickerData.info["shortName"], tickerData.info["currentPrice"], tickerData.info["forwardPE"], tickerData.info["sector"], temptime]
