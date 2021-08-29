@@ -36,7 +36,9 @@ graphData_query = """ INSERT INTO graphdata
 
 def getTickerData(ticker, stockNum):
     # strTicker = ''.join(ticker)
+    print(ticker)
     stockTicker = ticker.replace(".", "")
+    print(stockTicker)
     tickerData = yf.Ticker(stockTicker)
     listOfTicker = [tickerData.info["shortName"], tickerData.info["currentPrice"], tickerData.info["forwardPE"], tickerData.info["sector"], temptime]
     print(str(stockNum) + " " + ticker + " = " + tickerData.info["shortName"])
