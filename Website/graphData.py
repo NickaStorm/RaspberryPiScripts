@@ -23,6 +23,7 @@ cur.execute("select stickersymbol from stockinfo")
 rv = cur.fetchall()
 for result in rv:
     sqlData.append(result)
+    print(result)
 
 # tickerSymbol = 'DOV'
 
