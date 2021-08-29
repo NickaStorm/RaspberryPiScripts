@@ -106,37 +106,79 @@ def tables():
         password="blueberry",
         db='dividendchampions',
     )
-
     cur = conn.cursor()
-
     cur.execute("select * from stockinfo")
-
-    # serialize results into JSON
     rv = cur.fetchall()
     for result in rv:
         data.append(result)
 
-    return render_template('index.html', headings=headers, data=data)
+    # return render_template('index.html', headings=headers, data=data)
+    return """
+<!DOCTYPE html>
+<html>
 
-# @app.route('/stockgraph')
-# def stockgraph():
-#     conn = mysql.connector.connect(
-#         host='127.0.0.1',
-#         user='user',
-#         password="blueberry",
-#         db='dividendchampions',
-#     )
-#     cur = conn.cursor()
-#     cur.execute("select * from stockinfo")
-#     rv = cur.fetchall()
-#     for result in rv:
-#         data.append(result)
-#
-#     fig = Figure()
-#     axis = fig.add_subplot(1, 1, 1)
-#     x1 = [1, 2, 3, 4]
-#     y1 = [2, 6, 1, 3]
-#     axis.plot(x1, y1)
-#     output = BytesIO()
-#     FigureCanvas(fig).print_png(output)
-#     return Response(output.getvalue(), mimetype='image/png')
+<head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif
+    }
+
+    .title {
+    text-align:left;
+    border-bottom: 2px solid black;
+    font-size: 85px;
+    font-family:Fantasy;
+    background-color: dimgray;
+    color: white;
+    padding-left: 10px;
+    height: 110px;
+    }
+
+    .link {
+    text-decoration: none;
+    font-family:Fantasy;
+    font-size: 40px;
+    color: gainsboro;
+    padding: 0px;
+    padding-left: 50px;
+    }
+
+    table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    }
+
+    th, td {
+    padding: 5px;
+    text-align: left;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="title">Project Prometheus
+    <a href="/stockinfo" class="link">Table</a>
+    <a href="/" class="link">Info</a>
+</div>
+
+<table style="width:100%">
+  <tr>
+      {% for header in """ + headers + """ %}
+      <th>{{ header }}</th>
+      {% endfor %}
+  </tr>
+    {% for list in """ + data + """ %}
+  <tr style="border: 2px; border-bottom-width: 0px;">
+      {% for item in list %}
+      <td>{{ item }}</td>
+      {% endfor %}
+  </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
+"""
