@@ -21,9 +21,9 @@ graphData_query = """ INSERT INTO graphata
                        (name, currentprice, forwardPE, sector, curDate) VALUES (%s,%s,%s,%s,%s)"""
 
 cur.execute("select stickersymbol from stockinfo")
-    rv = cur.fetchall()
-    for result in rv:
-        sqlData.append(result)
+rv = cur.fetchall()
+for result in rv:
+    sqlData.append(result)
 
 tickerData = yf.Ticker(tickerSymbol)
 stockInfo = [tickerData.info["shortName"], tickerData.info["currentPrice"], tickerData.info["forwardPE"], tickerData.info["sector"], curDate]
