@@ -1,7 +1,9 @@
 import yfinance as yf
 import datetime
+import time
 import mysql.connector
 
+temptime = time.strftime('%Y-%m-%d')
 curDate = datetime.date.today()
 Date1 = curDate - datetime.timedelta(days=1)
 # Date2 = curDate - datetime.timedelta(days=2)
@@ -35,8 +37,8 @@ graphData_query = """ INSERT INTO graphdata
 def getTickerData(ticker, index):
     # strTicker = ''.join(ticker)
     tickerData = yf.Ticker(ticker)
-    listOfTicker = [tickerData.info["shortName"], tickerData.info["currentPrice"], tickerData.info["forwardPE"], tickerData.info["sector"], curDate]
-    print(listOfTicker)
+    listOfTicker = [tickerData.info["shortName"], tickerData.info["currentPrice"], tickerData.info["forwardPE"], tickerData.info["sector"], temptime]
+    # print(listOfTicker)
     return listOfTicker
 
 cur.execute("select stickersymbol from stockinfo")
