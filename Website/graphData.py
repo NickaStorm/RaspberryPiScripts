@@ -49,6 +49,7 @@ for result in rv:
 indexNum = 0
 
 for item in sqlData:
+    stockTicker = item[0].replace(".", "")
     cur.execute(graphData_query, getTickerData(item[0], indexNum))
     indexNum += 1
     print(item[0])
