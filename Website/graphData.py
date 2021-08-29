@@ -31,8 +31,8 @@ for result in rv:
 
 def getTickerData(ticker):
     tickerData = yf.Ticker(ticker)
-    return [tickerData.info["shortName"], tickerData.info["currentPrice"], tickerData.info["forwardPE"], tickerData.info["sector"], curDate]
-
+    listOfTicker = [tickerData.info["shortName"], tickerData.info["currentPrice"], tickerData.info["forwardPE"], tickerData.info["sector"], curDate]
+    return listOfTicker
 
 for item in sqlData:
     cur.execute(graphData_query, getTickerData(item))
