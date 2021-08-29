@@ -19,7 +19,7 @@ cur = conn.cursor(prepared=True)
 graphData_query = """ INSERT INTO graphdata
                        (name, currentprice, forwardPE, sector, curDate) VALUES (%s,%s,%s,%s,%s)"""
 
-cur.execute("select stickersymbol from stockinfo")
+cur.execute("select * from stockinfo")
 rv = cur.fetchall()
 for result in rv:
     sqlData.append(result)
