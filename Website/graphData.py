@@ -41,7 +41,7 @@ def getTickerData(ticker, stockNum):
     print(stockTicker)
     tickerData = yf.Ticker(stockTicker)
     listOfTicker = [tickerData.info["shortName"], tickerData.info["currentPrice"], tickerData.info["forwardPE"], tickerData.info["sector"], temptime]
-    print(str(stockNum) + " " + ticker + " = " + tickerData.info["shortName"])
+    # print(str(stockNum) + " " + ticker + " = " + tickerData.info["shortName"])
     # print(tickerData.info["Name"])
     return listOfTicker
 
