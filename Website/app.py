@@ -99,6 +99,7 @@ def index():
 #creates the table sub page
 @app.route('/stockinfo')
 def tables():
+    data = []
     conn = mysql.connector.connect(
         host='127.0.0.1',
         user='user',
