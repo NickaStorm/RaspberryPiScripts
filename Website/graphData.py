@@ -36,6 +36,7 @@ def getTickerData(ticker, index):
     # strTicker = ''.join(ticker)
     tickerData = yf.Ticker(ticker)
     listOfTicker = [tickerData.info["shortName"], tickerData.info["currentPrice"], tickerData.info["forwardPE"], tickerData.info["sector"], curDate]
+    print(listOfTicker)
     return listOfTicker
 
 cur.execute("select stickersymbol from stockinfo")
