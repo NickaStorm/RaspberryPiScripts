@@ -38,11 +38,14 @@ def getTickerData(ticker, stockNum):
     # strTicker = ''.join(ticker)
     print(ticker)
     stockTicker = ticker.replace(".", "")
-    print(stockTicker)
+
+    # FIX THIS ABOMINATION LATER
+    if stockTicker == "BFB":
+        stockTicker = "BF-B"
+
     tickerData = yf.Ticker(stockTicker)
     listOfTicker = [tickerData.info["shortName"], tickerData.info["currentPrice"], tickerData.info["forwardPE"], tickerData.info["sector"], temptime]
-    # print(str(stockNum) + " " + ticker + " = " + tickerData.info["shortName"])
-    # print(tickerData.info["Name"])
+    print(str(stockNum) + " " + ticker + " = " + tickerData.info["shortName"])
     return listOfTicker
 
 cur.execute("select stickersymbol from stockinfo")
