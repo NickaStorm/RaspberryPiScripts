@@ -35,15 +35,16 @@ graphData_query = """ INSERT INTO graphdata
 # indexNum = 0
 
 def getTickerData(ticker, stockNum):
-    stockTicker = ticker.replace(".", "")
 
     # FIX THIS ABOMINATION LATER
-    if stockTicker == "BFB":
-        stockTicker = "BF-B"
-    elif stockTicker == "EV":
-        stockTicker = "ETV"
+    if ticker == "ARTN.A":
+        ticker = "ARTNA"
+    elif ticker == "BFB":
+        ticker = "BF-B"
+    elif ticker == "EV":
+        ticker = "ETV"
 
-    tickerData = yf.Ticker(stockTicker)
+    tickerData = yf.Ticker(ticker)
     listOfTicker = [tickerData.info["shortName"], tickerData.info["currentPrice"], tickerData.info["forwardPE"], tickerData.info["sector"], temptime]
     print(str(stockNum) + " " + ticker + " = " + tickerData.info["shortName"])
     return listOfTicker
