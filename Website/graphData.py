@@ -22,7 +22,7 @@ graphData_query = """ INSERT INTO graphdata
 
 def getTickerData(ticker, stockNum):
 
-    # FIX THIS ABOMINATION LATER
+    # FIX THIS ABOMINATION
     if ticker == "ARTN.A":
         ticker = "ARTNA"
     elif ticker == "BF.B":
