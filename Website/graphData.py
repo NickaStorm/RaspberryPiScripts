@@ -43,6 +43,10 @@ def getTickerData(ticker, stockNum):
         ticker = "BF-B"
     elif ticker == "EV":
         ticker = "ETV"
+    elif ticker == "JW.A":
+        ticker = "JW-A"
+    elif ticker == "MKC.V":
+        ticker = "MKC-V"
 
     print(ticker)
     tickerData = yf.Ticker(ticker)
