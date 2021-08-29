@@ -37,7 +37,7 @@ def getTickerData(ticker):
 indexNum = 0
 
 for item in sqlData:
-    cur.execute(graphData_query, getTickerData(sqlData[indexNum]))
+    # cur.execute(graphData_query, getTickerData(sqlData[indexNum]))
     indexNum += 1
     print(item)
 
