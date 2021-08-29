@@ -35,7 +35,7 @@ def getTickerData(ticker):
     return listOfTicker
 
 for item in sqlData:
-    cur.execute(graphData_query, getTickerData(item))
+    cur.execute(graphData_query, getTickerData(item.str()))
     print(item)
 
 conn.commit()
