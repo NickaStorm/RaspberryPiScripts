@@ -50,7 +50,7 @@ indexNum = 0
 for item in sqlData:
     cur.execute(graphData_query, getTickerData(item[0], indexNum))
     indexNum += 1
-    # print(item)
+    print(item[0])
 
 print(sqlData)
 
