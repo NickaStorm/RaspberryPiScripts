@@ -34,12 +34,13 @@ graphData_query = """ INSERT INTO graphdata
 
 # indexNum = 0
 
-def getTickerData(ticker, stockNum):
+def getTickerData(ticker, stockNum, sqlLen):
     # strTicker = ''.join(ticker)
     stockTicker = ticker.replace(".", "")
     tickerData = yf.Ticker(stockTicker)
     listOfTicker = [tickerData.info["shortName"], tickerData.info["currentPrice"], tickerData.info["forwardPE"], tickerData.info["sector"], temptime]
-    print(str(stockNum) + " " + ticker + " = " + tickerData.info["shortName"])
+    percentDone = (stockNum/sqlLen) * 100
+    print(str(percentDone) + "% " + ticker + " = " + tickerData.info["shortName"])
     # print(tickerData.info["Name"])
     return listOfTicker
 
@@ -52,8 +53,8 @@ indexNum = 1
 
 for item in sqlData:
     # stockTicker = item[0].replace(".", "")
-    cur.execute(graphData_query, getTickerData(item[0], indexNum))
-    print(item[0])
+    cur.execute(graphData_query, getTickerData(item[0], indexNum, len(sqlData)))
+    # print(item[0])
     indexNum += 1
 
 print(sqlData)
