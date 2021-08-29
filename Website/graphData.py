@@ -38,8 +38,8 @@ def getTickerData(ticker, stockNum):
 
     # FIX THIS ABOMINATION LATER
     if ticker == "ARTN.A":
-        ticker = "ARTNA"
-    elif ticker == "BFB":
+        ticker = "ARTNA]"
+    elif ticker == "BF.B":
         ticker = "BF-B"
     elif ticker == "EV":
         ticker = "ETV"
