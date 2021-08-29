@@ -35,8 +35,6 @@ graphData_query = """ INSERT INTO graphdata
 # indexNum = 0
 
 def getTickerData(ticker, stockNum):
-    # strTicker = ''.join(ticker)
-    print(ticker)
     stockTicker = ticker.replace(".", "")
 
     # FIX THIS ABOMINATION LATER
