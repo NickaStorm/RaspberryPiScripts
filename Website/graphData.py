@@ -19,7 +19,7 @@ cur = conn.cursor(prepared=True)
 graphData_query = """ INSERT INTO graphdata
                        (name, currentprice, forwardPE, sector, curDate) VALUES (%s,%s,%s,%s,%s)"""
 
-cur.execute("select * from stockinfo")
+cur.execute("select stickersymbol from stockinfo")
 rv = cur.fetchall()
 for result in rv:
     sqlData.append(result)
@@ -31,7 +31,8 @@ for result in rv:
 # stockInfo = [tickerData.info["shortName"], tickerData.info["currentPrice"], tickerData.info["forwardPE"], tickerData.info["sector"], curDate]
 
 def getTickerData(ticker):
-    tickerData = yf.Ticker(ticker)
+    strTicker = ''.join(ticker)
+    tickerData = yf.Ticker(strTicker)
     listOfTicker = [tickerData.info["shortName"], tickerData.info["currentPrice"], tickerData.info["forwardPE"], tickerData.info["sector"], curDate]
     return listOfTicker
 
