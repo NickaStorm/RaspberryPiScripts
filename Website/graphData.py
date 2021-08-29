@@ -17,7 +17,7 @@ conn = mysql.connector.connect(
         auth_plugin='mysql_native_password'
     )
 cur = conn.cursor(prepared=True)
-graphData_query = """ INSERT INTO graphata
+graphData_query = """ INSERT INTO graphdata
                        (name, currentprice, forwardPE, sector, curDate) VALUES (%s,%s,%s,%s,%s)"""
 
 cur.execute("select stickersymbol from stockinfo")
