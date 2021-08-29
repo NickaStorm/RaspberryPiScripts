@@ -23,6 +23,8 @@ GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost';
 use dividendchampions;
 CREATE TABLE stockdates(dateofinfo date, yearsonlist int(100));
 CREATE TABLE stockinfo(stickersymbol varchar(30), stockname varchar(60), sector varchar(60), industry varchar(60));
+CREATE TABLE graphdata(name varchar(30), currentprice varchar(60), forwardPE varchar(60), sector varchar(60), curDate date);
+
 show tables;
 -- this section only displays for the admin
 -- show databases;
