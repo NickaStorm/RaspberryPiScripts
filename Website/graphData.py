@@ -34,12 +34,12 @@ graphData_query = """ INSERT INTO graphdata
 
 # indexNum = 0
 
-def getTickerData(ticker, index):
+def getTickerData(ticker, stockNum):
     # strTicker = ''.join(ticker)
     stockTicker = ticker.replace(".", "")
     tickerData = yf.Ticker(stockTicker)
     listOfTicker = [tickerData.info["shortName"], tickerData.info["currentPrice"], tickerData.info["forwardPE"], tickerData.info["sector"], temptime]
-    # print(tickerData.info["shortName"])
+    print(stockNum + " " + ticker + " = " + tickerData.info["shortName"])
     # print(tickerData.info["Name"])
     return listOfTicker
 
@@ -47,13 +47,14 @@ cur.execute("select stickersymbol from stockinfo")
 rv = cur.fetchall()
 for result in rv:
     sqlData.append(result)
-indexNum = 0
+
+indexNum = 1
 
 for item in sqlData:
     # stockTicker = item[0].replace(".", "")
     cur.execute(graphData_query, getTickerData(item[0], indexNum))
-    indexNum += 1
     print(item[0])
+    indexNum += 1
 
 print(sqlData)
 
