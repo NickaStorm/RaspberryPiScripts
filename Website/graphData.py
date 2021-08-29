@@ -31,8 +31,8 @@ graphData_query = """ INSERT INTO graphdata
 # stockInfo = [tickerData.info["shortName"], tickerData.info["currentPrice"], tickerData.info["forwardPE"], tickerData.info["sector"], curDate]
 
 def getTickerData(ticker):
-    strTicker = ''.join(ticker)
-    tickerData = yf.Ticker(strTicker)
+    # strTicker = ''.join(ticker)
+    tickerData = yf.Ticker(ticker)
     listOfTicker = [tickerData.info["shortName"], tickerData.info["currentPrice"], tickerData.info["forwardPE"], tickerData.info["sector"], curDate]
     return listOfTicker
 
