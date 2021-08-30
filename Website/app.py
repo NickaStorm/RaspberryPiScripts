@@ -62,14 +62,14 @@ def index():
     background-color: dimgray;
     color: white;
     padding-left: 10px;
-    height: 25%;
+    height: 40%;
     width: 100%;
     }
 
     .link {
     text-decoration: none;
     font-family: fantasy;
-    font-size: 5vw;
+    font-size: 3vw;
     color: gainsboro;
     padding: 0px;
     padding-left: 50px;
