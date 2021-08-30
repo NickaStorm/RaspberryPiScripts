@@ -74,6 +74,14 @@ def index():
     padding-left: 50px;
     }
     
+    .selectedlink {
+    text-decoration: none;
+    font-size: 3vw;
+    color: dimgray;
+    padding: 0px;
+    padding-left: 50px;
+    }
+    
     .graph {
     border: 2px solid black
     text-align: center;
@@ -87,7 +95,7 @@ def index():
 
 <div class="title">Project Prometheus
     <a href="/stockinfo" class="link">Table</a>
-    <a href="/" class="link">Info</a>
+    <a href="/" class="selectedlink">Info</a>
 </div>
 <center style="padding-top: 50px;">
 """ + graph + """
