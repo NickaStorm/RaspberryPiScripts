@@ -1,2 +1,2 @@
 export PYTHONPATH=/usr/bin/python3
-python /home/ubuntu/RaspberryPiScripts/Website/graphData.py
+python3 /home/ubuntu/RaspberryPiScripts/Website/graphData.py
