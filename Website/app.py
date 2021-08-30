@@ -106,6 +106,7 @@ def index():
 <head>
     <meta charset="UTF-8">
     <title>Explore Prometheus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body style="background-color: whitesmoke;">
 
