@@ -69,7 +69,7 @@ def index():
     .link {
     text-decoration: none;
     font-family: fantasy;
-    font-size: 40px;
+    font-size: 5vw;
     color: gainsboro;
     padding: 0px;
     padding-left: 50px;
