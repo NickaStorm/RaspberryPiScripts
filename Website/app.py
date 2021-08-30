@@ -77,6 +77,31 @@ def index():
     border: 2px solid black
     text-align: center;
     }
+    @media screen and (min-width: 601px) {
+                div.example {
+                    font-size: 40px;
+                }
+                .a{
+                    font-size: 25px;
+                    text-align: center;
+                }
+            }
+            @media screen and (max-width: 600px) {
+                div.example {
+                    font-size: 30px;
+                }
+                .a{
+                    font-size: 18px;
+                    text-align: center;
+                }
+            }
+            @media screen and (min-width: 800px) {
+                div.example {
+                    font-size: 60px;
+                }
+                .a{
+                    font-size: 35px;
+                }
 </style>
 <head>
     <meta charset="UTF-8">
@@ -84,7 +109,7 @@ def index():
 </head>
 <body style="background-color: whitesmoke;">
 
-<div class="title">Project Prometheus
+<div class="example">Project Prometheus
     <a href="/stockinfo" class="link">Table</a>
     <a href="/" class="link">Info</a>
 </div>
