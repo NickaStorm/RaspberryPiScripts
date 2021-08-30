@@ -49,7 +49,7 @@ def index():
     *{
     margin: 0;
     padding: 0;
-    font-family: impact;
+    font-family: fantasy;
     }
 
     .title {
