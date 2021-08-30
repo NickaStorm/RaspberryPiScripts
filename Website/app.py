@@ -56,7 +56,7 @@ def index():
     text-align:left;
     border-bottom: 2px solid black;
     font-size: 85px;
-    font-family:Fantasy;
+    font-family:impact;
     background-color: dimgray;
     color: white;
     padding-left: 10px;
