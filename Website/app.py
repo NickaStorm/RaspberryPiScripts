@@ -46,6 +46,7 @@ def index():
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="viewport" content="initial-scale=1">
 <style>
     *{
     margin: 0;
@@ -56,7 +57,7 @@ def index():
     .title {
     text-align:left;
     border-bottom: 2px solid black;
-    font-size: 85px;
+    font-size: 5vw;
     font-family: fantasy;
     background-color: dimgray;
     color: white;
@@ -78,39 +79,14 @@ def index():
     border: 2px solid black
     text-align: center;
     }
-    @media screen and (min-width: 601px) {
-                div.example {
-                    font-size: 40px;
-                }
-                .a{
-                    font-size: 25px;
-                    text-align: center;
-                }
-            }
-            @media screen and (max-width: 600px) {
-                div.example {
-                    font-size: 30px;
-                }
-                .a{
-                    font-size: 18px;
-                    text-align: center;
-                }
-            }
-            @media screen and (min-width: 800px) {
-                div.example {
-                    font-size: 60px;
-                }
-                .a{
-                    font-size: 35px;
-                }
 </style>
     <meta charset="UTF-8">
     <title>Explore Prometheus</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body style="background-color: whitesmoke;">
 
-<div class="example">Project Prometheus
+<div class="title">Project Prometheus
     <a href="/stockinfo" class="link">Table</a>
     <a href="/" class="link">Info</a>
 </div>
