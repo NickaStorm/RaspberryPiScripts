@@ -56,7 +56,7 @@ def index():
     text-align:left;
     border-bottom: 2px solid black;
     font-size: 85px;
-    font-family: impact;
+    font-family: fantasy;
     background-color: dimgray;
     color: white;
     padding-left: 10px;
@@ -66,7 +66,7 @@ def index():
 
     .link {
     text-decoration: none;
-    font-family: impact;
+    font-family: fantasy;
     font-size: 40px;
     color: gainsboro;
     padding: 0px;
