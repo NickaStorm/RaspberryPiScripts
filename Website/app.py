@@ -51,14 +51,13 @@ def index():
     *{
     margin: 0;
     padding: 0;
-    font-family: fantasy;
+    font-family: Times;
     }
 
     .title {
     text-align:left;
     border-bottom: 2px solid black;
     font-size: 5vw;
-    font-family: fantasy;
     background-color: dimgray;
     color: white;
     padding-left: 10px;
@@ -68,7 +67,6 @@ def index():
 
     .link {
     text-decoration: none;
-    font-family: fantasy;
     font-size: 3vw;
     color: gainsboro;
     padding: 0px;
