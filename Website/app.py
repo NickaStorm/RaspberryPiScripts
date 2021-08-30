@@ -77,7 +77,7 @@ def index():
     .selectedlink {
     text-decoration: none;
     font-size: 3vw;
-    color: dimgray;
+    color: white;
     padding: 0px;
     padding-left: 50px;
     }
