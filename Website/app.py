@@ -69,7 +69,7 @@ def index():
 
     .link {
     text-decoration: none;
-    font-size: calc(7px + 3vw);
+    font-size: 3vw;
     color: gainsboro;
     padding: 0px;
     padding-left: 50px;
