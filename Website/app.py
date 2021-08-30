@@ -63,7 +63,8 @@ def index():
     padding-left: 10px;
     height: 40%;
     width: 100%;
-    min-height: 150px;
+    min-height: 90px;
+    vertical-align: middle;
     }
 
     .link {
