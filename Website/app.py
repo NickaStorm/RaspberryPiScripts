@@ -49,14 +49,14 @@ def index():
     *{
     margin: 0;
     padding: 0;
-    font-family: sans-serif
+    font-family: impact;
     }
 
     .title {
     text-align:left;
     border-bottom: 2px solid black;
     font-size: 85px;
-    font-family:impact;
+    font-family: impact;
     background-color: dimgray;
     color: white;
     padding-left: 10px;
@@ -66,7 +66,7 @@ def index():
 
     .link {
     text-decoration: none;
-    font-family:Fantasy;
+    font-family: impact;
     font-size: 40px;
     color: gainsboro;
     padding: 0px;
