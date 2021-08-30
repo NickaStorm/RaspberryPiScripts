@@ -45,6 +45,7 @@ def index():
     return """
 <!DOCTYPE html>
 <html lang="en">
+<head>
 <style>
     *{
     margin: 0;
@@ -103,7 +104,6 @@ def index():
                     font-size: 35px;
                 }
 </style>
-<head>
     <meta charset="UTF-8">
     <title>Explore Prometheus</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
