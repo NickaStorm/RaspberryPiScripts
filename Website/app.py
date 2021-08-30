@@ -60,7 +60,8 @@ def index():
     background-color: dimgray;
     color: white;
     padding-left: 10px;
-    height: 110px;
+    height: 25%;
+    width: 100%;
     }
 
     .link {
