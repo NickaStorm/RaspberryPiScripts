@@ -53,14 +53,14 @@
     <a href="/" class="link">Info</a>
 </div>
 
-<table style="width:100%">
+<table style="width:100%; border: 10px;">
   <tr>
       {% for header in headings %}
       <th>{{ header }}</th>
       {% endfor %}
   </tr>
     {% for list in data %}
-  <tr style="border: 10px;">
+  <tr>
       {% for item in list %}
       <td>{{ item }}</td>
       {% endfor %}
